@@ -8,11 +8,11 @@ public class CameraMovement : MonoBehaviour
     public float accelerationSpeed = 8;
     // Slows camera movement over time
     public float friction = 8;
-    Rigidbody rb;
+    Rigidbody2D rb;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
