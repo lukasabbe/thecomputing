@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
-    int direction = 0;
+    public int direction = 0;
     void Start()
     {
-        
+        SetRotation();
     }
-    /*
-    void Update()
+    void SetRotation()
     {
-        Collider2D[] hitColliders = Physics2D.(BuildPosition(), 0.1f); // Creates a list of colliders in the tile the cursor is over
-
-        foreach (var hitCollider in hitColliders)
-        { // Destroys the gameObject
-            Destroy((hitCollider).gameObject);
-        }
     }
-    */
     public void OnTriggerStay2D(Collider2D col)
     {
         Debug.Log(col.gameObject.name);
-        //col.transform.position.y += 0.2f;
+        col.transform.position = new Vector2(0, col.transform.position.y + 1 * Time.deltaTime);
     }
     /*
     void OnTriggerStay2D(Collider2D col)
@@ -32,5 +24,4 @@ public class ConveyorBelt : MonoBehaviour
         //other.attachedRigidbody.AddForce(-0.1F * other.attachedRigidbody.velocity);
     }
     */
-    
 }

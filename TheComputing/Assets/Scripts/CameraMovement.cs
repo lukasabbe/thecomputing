@@ -25,7 +25,7 @@ public class CameraMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        // 
+        // Adds the movement force
         rb.AddForce(transform.right * 1000 * accelerationSpeed * horizontal * Time.deltaTime);
         rb.AddForce(transform.up * 1000 * accelerationSpeed * vertical * Time.deltaTime);
     }
