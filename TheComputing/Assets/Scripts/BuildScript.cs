@@ -7,6 +7,7 @@ public class BuildScript : MonoBehaviour
     public GameObject testCube; // For testing the building
     public GameObject testItem; // Test item
 
+    public int buildDirection = 0;
     void Update()
     {
         PlayerInputs();
@@ -19,6 +20,9 @@ public class BuildScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) Break();
 
         if (Input.GetKeyDown("q")) DropItem();
+
+        if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
+        else if (Input.GetKeyDown("r")) buildDirection = 0;
     }
     void Build()
     {
@@ -27,7 +31,7 @@ public class BuildScript : MonoBehaviour
     }
     void Break()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(BuildPosition(), 0.1f); // Creates a list of colliders in the tile the cursor is over
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(BuildPosition(), new Vector2(0.498f, 0.498f), 0); // Creates a list of colliders in the tile the cursor is over
 
         foreach (var hitCollider in hitColliders)
         { // Destroys the gameObject
@@ -39,20 +43,18 @@ public class BuildScript : MonoBehaviour
         GameObject item = Instantiate(testItem);
         item.transform.position = CursorPosition();
     }
-    Vector3 CursorPosition() // The X and Y position from the cursor
+    Vector2 CursorPosition() // The X and Y position from the cursor
     {
-        Vector3 temp = Input.mousePosition;
-        float offset = -transform.position.z; // Makes sure the build position is at Z 0
-        temp.z = offset; // Set this to be the distance you want the object to be placed in front of the camera.
+        Vector2 temp = Input.mousePosition;
         return Camera.main.ScreenToWorldPoint(temp); // Puts the cursor position into a Vector3 value
     }
-    Vector3 BuildPosition() // Rounded value of the cursor position to fit into tiles
+    Vector2 BuildPosition() // Rounded value of the cursor position to fit into tiles
     {
-        return new Vector3(Mathf.Floor(CursorPosition().x) + 0.5f, Mathf.Floor(CursorPosition().y) + 0.5f, 0);
+        return new Vector2(Mathf.Floor(CursorPosition().x) + 0.5f, Mathf.Floor(CursorPosition().y) + 0.5f);
     }
     bool EmptyTile()
     {
-        if (Physics.CheckSphere(BuildPosition(), 0.1f)) return false;
+        if (Physics2D.OverlapCircle(BuildPosition(), 0.02f)) return false;
         else return true;
     }
 }
