@@ -25,7 +25,7 @@ public class BuildScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) Break();
 
         if (Input.GetKeyDown("q")) DropItem();
-        //opem refiner
+        //opem refiner (Test)
         if (Input.GetKeyDown("e")) RefinerOpen();
 
         if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
