@@ -46,7 +46,6 @@ public class ConveyorBelt : MonoBehaviour
             posDifference = new Vector2(col.transform.position.x - posDifference.x / (2000 * Time.deltaTime), 
                                         col.transform.position.y - posDifference.y / (2000 * Time.deltaTime));
 
-            print(Time.deltaTime * 2000);
 
             // Push the items closer to the middle of the conveyor belt
             if (direction == 0)

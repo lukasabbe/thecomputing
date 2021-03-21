@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BuildScript : MonoBehaviour
 {
-    public GameObject testCube; // For testing the building
+    public GameObject[] buldings;
     public GameObject testItem; // Test item
 
     public int buildDirection = 0;
+
+    //Equpied building
+    private int building = 0;
     void Update()
     {
         PlayerInputs();
@@ -16,6 +19,8 @@ public class BuildScript : MonoBehaviour
     {
         // You can build if no object is in the tile
         if (EmptyTile() && Input.GetMouseButtonDown(0)) Build();
+
+        if (Input.GetKeyDown("t")) ChangeBuilding();
 
         if (Input.GetMouseButtonDown(1)) Break();
 
@@ -26,7 +31,7 @@ public class BuildScript : MonoBehaviour
     }
     void Build()
     {
-        GameObject build = Instantiate(testCube);
+        GameObject build = Instantiate(buldings[building]);
         build.transform.position = BuildPosition();
     }
     void Break()
@@ -37,6 +42,11 @@ public class BuildScript : MonoBehaviour
         { // Destroys the gameObject
             Destroy((hitCollider).gameObject);
         }
+    }
+    void ChangeBuilding()
+    {
+        if(building == 0) building = 1;
+        else building = 0;
     }
     void DropItem()
     {
