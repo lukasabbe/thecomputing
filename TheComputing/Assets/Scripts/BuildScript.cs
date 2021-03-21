@@ -26,6 +26,8 @@ public class BuildScript : MonoBehaviour
 
         if (Input.GetKeyDown("q")) DropItem();
 
+        if (Input.GetKeyDown("e")) RefinerOpen();
+
         if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
         else if (Input.GetKeyDown("r")) buildDirection = 0;
     }
@@ -48,6 +50,35 @@ public class BuildScript : MonoBehaviour
         if(building == 0) building = 1;
         else building = 0;
     }
+    //Looks for gamesObj in a radius of mouse
+    GameObject findBuildingGameObject()
+    {
+        Collider2D c = Physics2D.OverlapCircle(BuildPosition(), 0.02f);
+        GameObject g;
+        try
+        {
+            g = c.gameObject;
+        }
+        catch
+        {
+            g = null;
+        }
+        return g;
+    }
+
+    void RefinerOpen()
+    {
+        GameObject g = findBuildingGameObject();
+        if(g != null)
+        {
+            if (g.tag == "Refiner")
+            {
+                //test so it works (this will be the menu but i havent started with it yet)
+                g.SetActive(false);
+            }
+        }
+    }
+
     void DropItem()
     {
         GameObject item = Instantiate(testItem);
