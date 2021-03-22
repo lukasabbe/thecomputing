@@ -9,8 +9,11 @@ public class Splitter : MonoBehaviour
     public int maxCarryingNumber = 5;
     public int speedLVL = 0;
 
+    bool shouldSplit = false;
+    const int Up = 0, Down = 2, Right = 1, Left = 3;
+
     void Start()
-    {
+    {    
         // Finds the Main Camera and it's BuildScript
         GameObject mainCamera = GameObject.Find("Main Camera");
         buildScript = mainCamera.GetComponent<BuildScript>();
@@ -21,44 +24,37 @@ public class Splitter : MonoBehaviour
     }
     void Update()
     {
-
+        
     }
     void SetRotation()
     {
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * direction);
     }
-    public void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Item")
+        if (col.tag == "Item")
         {
-            // Forward pushing force
-            if (direction == 0)
-                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y + 1 * Time.deltaTime + 0.5f * speedLVL * Time.deltaTime);
-            if (direction == 2)
-                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y - 1 * Time.deltaTime - 0.5f * speedLVL * Time.deltaTime);
-            if (direction == 1)
-                col.transform.position = new Vector2(col.transform.position.x + 1 * Time.deltaTime + 0.5f * speedLVL * Time.deltaTime, col.transform.position.y);
-            if (direction == 3)
-                col.transform.position = new Vector2(col.transform.position.x - 1 * Time.deltaTime - 0.5f * speedLVL * Time.deltaTime, col.transform.position.y);
+            switch(direction)
+            {
+                case (Up):
+                    if (shouldSplit) col.transform.position = col.transform.position + new Vector3(-1, 0.5f, 0);
+                    else col.transform.position = col.transform.position + new Vector3(0, 1, 0);
+                    break;
+                case (Down):
+                    if (shouldSplit) col.transform.position = col.transform.position + new Vector3(1, -0.5f, 0);
+                    else col.transform.position = col.transform.position + new Vector3(0, -1, 0);
+                    break;
+                case (Left):
+                    if (shouldSplit) col.transform.position = col.transform.position + new Vector3(-0.5f, -1, 0);
+                    else col.transform.position = col.transform.position + new Vector3(-1, 0, 0);
+                    break;
+                case (Right):
+                    if (shouldSplit) col.transform.position = col.transform.position + new Vector3(0.5f, 1, 0);
+                    else col.transform.position = col.transform.position + new Vector3(1, 0, 0);
+                    break;
+            }
 
-            // posDifference is the distance from the belt to the item
-            Vector2 posDifference = col.transform.position - transform.position;
-
-            // Lowers that number so item goes closer to the center of the conveyor belt
-            posDifference = new Vector2(col.transform.position.x - posDifference.x / (2000 * Time.deltaTime),
-                                        col.transform.position.y - posDifference.y / (2000 * Time.deltaTime));
-
-
-            // Push the items closer to the middle of the conveyor belt
-            if (direction == 0)
-                col.transform.position = new Vector2(posDifference.x, col.transform.position.y);
-            if (direction == 2)
-                col.transform.position = new Vector2(posDifference.x, col.transform.position.y);
-            if (direction == 1)
-                col.transform.position = new Vector2(col.transform.position.x, posDifference.y);
-            if (direction == 3)
-                col.transform.position = new Vector2(col.transform.position.x, posDifference.y);
-
+            shouldSplit = !shouldSplit;
         }
     }
 }

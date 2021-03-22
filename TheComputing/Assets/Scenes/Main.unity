@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buldings:
   - {fileID: 2021798138396487167, guid: 8345b9455b825ed4f93b314e08b6707f, type: 3}
-  - {fileID: 1062909025800213114, guid: d6387679421176946a7ec94b2e3bb95d, type: 3}
+  - {fileID: 1706936211740733599, guid: 7bba1a177a795f34da07ef04d8809d18, type: 3}
   - {fileID: 6758593693610615228, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
   - {fileID: 6758593693610615228, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
   testItem: {fileID: 620809771182812912, guid: f0fc2ca8b1df0db4589df029de23ef02, type: 3}
@@ -684,6 +684,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1423189074309221437, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
+      propertyPath: trashItem
+      value: 
+      objectReference: {fileID: 9096375808607285824, guid: 175bd1ccd8f411d4b91458767e721e59, type: 3}
     - target: {fileID: 6758593693610615224, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
       propertyPath: m_RootOrder
       value: 1

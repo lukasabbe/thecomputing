@@ -9,7 +9,7 @@ public class ConveyorBelt : MonoBehaviour
     public int maxCarryingNumber = 5;
     public int speedLVL = 0;
 
-    const int Up = 0, Down = 2, Right = 1, Left = 4;
+    const int Up = 0, Down = 2, Right = 1, Left = 3;
 
     void Start()
     {    
