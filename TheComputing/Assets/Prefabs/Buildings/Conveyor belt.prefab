@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021798137946463280}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.03}
   m_LocalScale: {x: 0.5, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021798138396487165}
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021798138098932012}
   m_LocalRotation: {x: -0, y: -0, z: 0.38268209, w: 0.9238801}
-  m_LocalPosition: {x: -0.055, y: 0.175, z: 0}
+  m_LocalPosition: {x: -0.055, y: 0.175, z: -0.03}
   m_LocalScale: {x: 0.25, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021798138396487165}
@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021798138167799209}
   m_LocalRotation: {x: -0, y: -0, z: 0.923879, w: 0.38268483}
-  m_LocalPosition: {x: 0.055, y: 0.175, z: 0}
+  m_LocalPosition: {x: 0.055, y: 0.175, z: -0.03}
   m_LocalScale: {x: 0.25, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 2021798138396487165}
@@ -376,6 +376,7 @@ MonoBehaviour:
   buildScript: {fileID: 0}
   direction: 0
   maxCarryingNumber: 5
+  speedLVL: 0
 --- !u!61 &2021798138396487138
 BoxCollider2D:
   m_ObjectHideFlags: 0
