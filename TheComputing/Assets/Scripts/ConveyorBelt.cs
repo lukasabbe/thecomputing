@@ -7,6 +7,8 @@ public class ConveyorBelt : MonoBehaviour
     public BuildScript buildScript;
     public int direction = 0;
     public int maxCarryingNumber = 5;
+    public int speedLVL = 0;
+
     void Start()
     {    
         // Finds the Main Camera and it's BuildScript
@@ -31,13 +33,13 @@ public class ConveyorBelt : MonoBehaviour
         { 
             // Forward pushing force
             if (direction == 0)
-                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y + 1 * Time.deltaTime);
+                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y + 1 * Time.deltaTime + 0.5f * speedLVL * Time.deltaTime);
             if (direction == 2)
-                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y + -1 * Time.deltaTime);
+                col.transform.position = new Vector2(col.transform.position.x, col.transform.position.y - 1 * Time.deltaTime - 0.5f * speedLVL * Time.deltaTime);
             if (direction == 1)
-                col.transform.position = new Vector2(col.transform.position.x + 1 * Time.deltaTime, col.transform.position.y);
+                col.transform.position = new Vector2(col.transform.position.x + 1 * Time.deltaTime + 0.5f * speedLVL * Time.deltaTime, col.transform.position.y);
             if (direction == 3)
-                col.transform.position = new Vector2(col.transform.position.x + -1 * Time.deltaTime, col.transform.position.y);
+                col.transform.position = new Vector2(col.transform.position.x - 1 * Time.deltaTime - 0.5f * speedLVL * Time.deltaTime, col.transform.position.y);
 
             // posDifference is the distance from the belt to the item
             Vector2 posDifference = col.transform.position - transform.position; 

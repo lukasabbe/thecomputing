@@ -376,6 +376,7 @@ MonoBehaviour:
   buildScript: {fileID: 0}
   direction: 0
   maxCarryingNumber: 5
+  speedLVL: 0
 --- !u!61 &2021798138396487138
 BoxCollider2D:
   m_ObjectHideFlags: 0
