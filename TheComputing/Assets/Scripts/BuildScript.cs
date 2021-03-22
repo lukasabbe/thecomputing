@@ -9,6 +9,8 @@ public class BuildScript : MonoBehaviour
     public GameObject testItem; // Test item
     public GameObject directionArrow;
 
+    public LayerMask placedBuilding; //Buildings placed by the player
+
     //send to static gameManger
     public Text t;
     private bool isBuilderOn = true;
@@ -138,7 +140,7 @@ public class BuildScript : MonoBehaviour
     }
     bool emptyTile()
     {
-        if (Physics2D.OverlapCircle(buildPosition(), 0.02f)) return false;
+        if (Physics2D.OverlapCircle(buildPosition(), 0.02f, placedBuilding)) return false;
         else return true;
     }
 }

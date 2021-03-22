@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706936210224022301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Silver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1706936210313056259}
   - component: {fileID: 1706936210313056257}
   - component: {fileID: 1706936210313056258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1706936210399560175}
   - component: {fileID: 1706936210399560173}
   - component: {fileID: 1706936210399560174}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1706936210434692395}
   - component: {fileID: 1706936210434692396}
   - component: {fileID: 1706936210434692394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706936210684451940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706936210751675751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 1706936210868000210}
   - component: {fileID: 1706936210868000208}
   - component: {fileID: 1706936210868000209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 1706936210888615953}
   - component: {fileID: 1706936210888615951}
   - component: {fileID: 1706936210888615952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 1706936210999991977}
   - component: {fileID: 1706936210999991975}
   - component: {fileID: 1706936210999991976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 1706936211094454262}
   - component: {fileID: 1706936211094454263}
   - component: {fileID: 1706936211094454264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 1706936211166448769}
   - component: {fileID: 1706936211166448895}
   - component: {fileID: 1706936211166448768}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 1706936211484975885}
   - component: {fileID: 1706936211484975883}
   - component: {fileID: 1706936211484975884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 1706936211563607682}
   - component: {fileID: 1706936211563607680}
   - component: {fileID: 1706936211563607681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706936211569326580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1706936211598072190}
   - component: {fileID: 1706936211598072191}
   - component: {fileID: 1706936211598072064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1117,7 +1117,7 @@ GameObject:
   - component: {fileID: 1706936211630596009}
   - component: {fileID: 1706936211630596007}
   - component: {fileID: 1706936211630596008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 1706936211684040920}
   - component: {fileID: 1706936211684040918}
   - component: {fileID: 1706936211684040919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 1706936211740733596}
   - component: {fileID: 1706936211740733597}
   - component: {fileID: 1706936211740733598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Refiner
   m_TagString: Refiner
   m_Icon: {fileID: 0}
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 1706936211907928628}
   - component: {fileID: 1706936211907928626}
   - component: {fileID: 1706936211907928627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 1706936212014266827}
   - component: {fileID: 1706936212014266828}
   - component: {fileID: 1706936212014266829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scrollbar Horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1605,7 +1605,7 @@ GameObject:
   - component: {fileID: 1706936212050468898}
   - component: {fileID: 1706936212050468899}
   - component: {fileID: 1706936212050468900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706936212165796049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1751,7 +1751,7 @@ GameObject:
   - component: {fileID: 1706936212183754697}
   - component: {fileID: 1706936212183754698}
   - component: {fileID: 1706936212183754699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,7 +1850,7 @@ GameObject:
   - component: {fileID: 1706936212332892099}
   - component: {fileID: 1706936212332892100}
   - component: {fileID: 1706936212332892101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}

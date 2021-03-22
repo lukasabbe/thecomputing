@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2807740925673097733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drop Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 6758593692046311363}
   - component: {fileID: 6758593692046295101}
   - component: {fileID: 6758593692046295100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6758593692228902419}
   - component: {fileID: 6758593692228902413}
   - component: {fileID: 6758593692228902412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 6758593692991010843}
   - component: {fileID: 6758593692991010837}
   - component: {fileID: 6758593692991010836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 6758593693340025424}
   - component: {fileID: 6758593693340025426}
   - component: {fileID: 6758593693340025425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 6758593693420893042}
   - component: {fileID: 6758593693420893036}
   - component: {fileID: 6758593693420893043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad 4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 6758593693465850948}
   - component: {fileID: 6758593693465850950}
   - component: {fileID: 6758593693465850949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: -8335036192227914282}
   - component: {fileID: 6758593693610615230}
   - component: {fileID: 6758593693610615229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trash Grabber
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -585,6 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0607bd19ac9b2dd4a8c939ee1a11b0b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildScript: {fileID: 0}
+  direction: 0
 --- !u!61 &6758593693610615230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -643,7 +645,7 @@ GameObject:
   - component: {fileID: 6758593693709954723}
   - component: {fileID: 6758593693709954717}
   - component: {fileID: 6758593693709954716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

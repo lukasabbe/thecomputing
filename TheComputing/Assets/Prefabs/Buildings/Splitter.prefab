@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1974308810719774461}
   - component: {fileID: 1974308810719774463}
   - component: {fileID: 1974308810719774462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1974308811488156256}
   - component: {fileID: 1974308811488156258}
   - component: {fileID: 1974308811488156257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1974308812054144722}
   - component: {fileID: 1974308812054144724}
   - component: {fileID: 1974308812054144723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7258107378706336183}
   - component: {fileID: 7258107378706336186}
   - component: {fileID: 7258107378706336181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 7258107379429377442}
   - component: {fileID: 7258107379429377443}
   - component: {fileID: 7258107379429377408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Splitter
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 7258107379540362734}
   - component: {fileID: 7258107379540362732}
   - component: {fileID: 7258107379540362735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 7258107379735228781}
   - component: {fileID: 7258107379735228755}
   - component: {fileID: 7258107379735228754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 7258107379788870769}
   - component: {fileID: 7258107379788870775}
   - component: {fileID: 7258107379788870774}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
