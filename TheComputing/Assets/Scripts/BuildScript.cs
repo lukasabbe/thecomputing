@@ -61,8 +61,8 @@ public class BuildScript : MonoBehaviour
     }
     void ChangeBuilding()
     {
-        if(building == 0) building = 1;
-        else building = 0;
+        if (building == buldings.Length -1) building = 0;
+        else building++;
     }
     void DirectionArrow()
     {
