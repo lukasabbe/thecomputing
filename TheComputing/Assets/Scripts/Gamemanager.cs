@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class GameManger
+public static class Gamemanager
 {
     public static int Money = 0;
     public static Text t;
