@@ -58,7 +58,7 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
-    void Build()
+    void Build()//test
     {
         GameObject build = Instantiate(buldings[building]);
         build.transform.position = buildPosition();
