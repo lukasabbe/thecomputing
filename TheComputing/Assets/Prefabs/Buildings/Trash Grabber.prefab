@@ -526,6 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6758593693610615224}
   - component: {fileID: 1423189074309221437}
+  - component: {fileID: -8335036192227914282}
   - component: {fileID: 6758593693610615230}
   - component: {fileID: 6758593693610615229}
   m_Layer: 0
@@ -572,6 +573,18 @@ MonoBehaviour:
   dropLocation: {fileID: 362518073474437699}
   trashItem: {fileID: 620809771182812912, guid: f0fc2ca8b1df0db4589df029de23ef02, type: 3}
   dropCooldown: 0
+--- !u!114 &-8335036192227914282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758593693610615228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0607bd19ac9b2dd4a8c939ee1a11b0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &6758593693610615230
 BoxCollider2D:
   m_ObjectHideFlags: 0
