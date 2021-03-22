@@ -396,7 +396,7 @@ MonoBehaviour:
   - {fileID: 2021798138396487167, guid: 8345b9455b825ed4f93b314e08b6707f, type: 3}
   - {fileID: 1706936211740733599, guid: 7bba1a177a795f34da07ef04d8809d18, type: 3}
   - {fileID: 6758593693610615228, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
-  - {fileID: 6758593693610615228, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
+  - {fileID: 7258107379429377471, guid: 44c2f7cbab7be404d8329121a1459113, type: 3}
   testItem: {fileID: 620809771182812912, guid: f0fc2ca8b1df0db4589df029de23ef02, type: 3}
   directionArrow: {fileID: 6225872417007008152, guid: 6dd444e357f608343a229f15806e977f, type: 3}
   t: {fileID: 797207936}
