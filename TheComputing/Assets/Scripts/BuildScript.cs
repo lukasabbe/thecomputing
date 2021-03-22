@@ -11,9 +11,9 @@ public class BuildScript : MonoBehaviour
 
     //send to static gameManger
     public Text t;
-
+    private bool isBuilderOn = true;
     public int buildDirection = 0;
-
+    private GameObject gb;
     //Equpied building
     private int building = 0;
     void Start()
@@ -23,8 +23,15 @@ public class BuildScript : MonoBehaviour
     }
     void Update()
     {
-        PlayerInputs();
-        DirectionArrow();
+        if (isBuilderOn)
+        {
+            PlayerInputs();
+            DirectionArrow();
+        }
+        else if (Input.GetKeyDown("e") && isBuilderOn == false){
+            isBuilderOn = true;
+            gb.SetActive(false);
+        }
     }
     void PlayerInputs()
     {
@@ -109,7 +116,9 @@ public class BuildScript : MonoBehaviour
             if (g.tag == "Refiner")
             {
                 //test so it works (this will be the menu but i havent started with it yet)
-                g.SetActive(false);
+                isBuilderOn = false;
+                g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+                gb = g.gameObject.transform.GetChild(4).gameObject;
             }
         }
     }
