@@ -53,7 +53,7 @@ public class BuildScript : MonoBehaviour
 
         foreach (var hitCollider in hitColliders)
         { // Destroys the gameObject
-            if(hitCollider.gameObject.tag != "Unb")
+            if(hitCollider.gameObject.tag != "Unb") //Doesnt destroy gameobj with the unb tag
             {
                 Destroy((hitCollider).gameObject);
             }
