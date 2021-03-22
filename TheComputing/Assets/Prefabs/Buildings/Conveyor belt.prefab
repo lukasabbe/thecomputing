@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 2021798138396487139}
   m_Layer: 0
   m_Name: Conveyor belt
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
