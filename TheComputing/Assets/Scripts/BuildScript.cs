@@ -6,19 +6,25 @@ public class BuildScript : MonoBehaviour
 {
     public GameObject[] buldings;
     public GameObject testItem; // Test item
+    public GameObject directionArrow;
 
     public int buildDirection = 0;
 
     //Equpied building
     private int building = 0;
+    void Start()
+    {
+        directionArrow = Instantiate(directionArrow);
+    }
     void Update()
     {
         PlayerInputs();
+        DirectionArrow();
     }
     void PlayerInputs()
     {
         // You can build if no object is in the tile
-        if (EmptyTile() && Input.GetMouseButtonDown(0)) Build();
+        if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
 
         if (Input.GetKeyDown("t")) ChangeBuilding();
 
@@ -34,11 +40,11 @@ public class BuildScript : MonoBehaviour
     void Build()
     {
         GameObject build = Instantiate(buldings[building]);
-        build.transform.position = BuildPosition();
+        build.transform.position = buildPosition();
     }
     void Break()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(BuildPosition(), new Vector2(0.498f, 0.498f), 0); // Creates a list of colliders in the tile the cursor is over
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(buildPosition(), new Vector2(0.498f, 0.498f), 0); // Creates a list of colliders in the tile the cursor is over
 
         foreach (var hitCollider in hitColliders)
         { // Destroys the gameObject
@@ -50,10 +56,15 @@ public class BuildScript : MonoBehaviour
         if(building == 0) building = 1;
         else building = 0;
     }
+    void DirectionArrow()
+    {
+        directionArrow.transform.position = buildPosition();
+        directionArrow.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
+    }
     //Looks for gamesObj in a radius of mouse
     GameObject findBuildingGameObject()
     {
-        Collider2D c = Physics2D.OverlapCircle(BuildPosition(), 0.02f);
+        Collider2D c = Physics2D.OverlapCircle(buildPosition(), 0.02f);
         GameObject g;
         try
         {
@@ -78,24 +89,23 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
-
     void DropItem()
     {
         GameObject item = Instantiate(testItem);
-        item.transform.position = CursorPosition();
+        item.transform.position = cursorPosition();
     }
-    Vector2 CursorPosition() // The X and Y position from the cursor
+    Vector2 cursorPosition() // The X and Y position from the cursor
     {
         Vector2 temp = Input.mousePosition;
         return Camera.main.ScreenToWorldPoint(temp); // Puts the cursor position into a Vector3 value
     }
-    Vector2 BuildPosition() // Rounded value of the cursor position to fit into tiles
+    Vector2 buildPosition() // Rounded value of the cursor position to fit into tiles
     {
-        return new Vector2(Mathf.Floor(CursorPosition().x) + 0.5f, Mathf.Floor(CursorPosition().y) + 0.5f);
+        return new Vector2(Mathf.Floor(cursorPosition().x) + 0.5f, Mathf.Floor(cursorPosition().y) + 0.5f);
     }
-    bool EmptyTile()
+    bool emptyTile()
     {
-        if (Physics2D.OverlapCircle(BuildPosition(), 0.02f)) return false;
+        if (Physics2D.OverlapCircle(buildPosition(), 0.02f)) return false;
         else return true;
     }
 }
