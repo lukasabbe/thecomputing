@@ -18,6 +18,7 @@ public class CameraMovement : MonoBehaviour
     {
         Movement();
         Friction();
+        Zoom();
     }
     void Movement()
     {
@@ -32,5 +33,20 @@ public class CameraMovement : MonoBehaviour
     void Friction()
     {
         rb.velocity = rb.velocity / (friction * Time.deltaTime + 1);
+    }
+    void Zoom()
+    {
+        Camera cam = GetComponent<Camera>();
+
+        // Scrolling to zoom in/out
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Scroll down
+        {
+            //     Jag tror pixel perfect camera skapar problem när man vill zooma ut/in, inte säker på hur man fixar det.
+
+            //cam.orthographicSize = 10;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Scroll up
+        {
+        }
     }
 }

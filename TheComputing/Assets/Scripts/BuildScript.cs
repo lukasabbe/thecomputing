@@ -39,8 +39,24 @@ public class BuildScript : MonoBehaviour
         //opem refiner (Test)
         if (Input.GetKeyDown("e")) RefinerOpen();
 
+        // press r to rotate
         if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
         else if (Input.GetKeyDown("r")) buildDirection = 0;
+
+        // Scroll to rotate building direction
+        if (Input.GetKey("left shift"))
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Scroll down
+            {
+                if (buildDirection < 3) buildDirection++;
+                else buildDirection = 0;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Scroll up
+            {
+                if (buildDirection > 0) buildDirection--;
+                else buildDirection = 3;
+            }
+        }
     }
     void Build()
     {
