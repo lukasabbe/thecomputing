@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildScript : MonoBehaviour
 {
     public GameObject[] buldings;
     public GameObject testItem; // Test item
     public GameObject directionArrow;
+
+    //send to static gameManger
+    public Text t;
 
     public int buildDirection = 0;
 
@@ -15,6 +19,7 @@ public class BuildScript : MonoBehaviour
     void Start()
     {
         directionArrow = Instantiate(directionArrow);
+        GameManger.t = t;
     }
     void Update()
     {
