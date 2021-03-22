@@ -22,10 +22,6 @@ public class Splitter : MonoBehaviour
         direction = buildScript.buildDirection;
         SetRotation();
     }
-    void Update()
-    {
-        
-    }
     void SetRotation()
     {
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * direction);
@@ -38,22 +34,21 @@ public class Splitter : MonoBehaviour
             {
                 case (Up):
                     if (shouldSplit) col.transform.position = col.transform.position + new Vector3(-1, 0.5f, 0);
-                    else col.transform.position = col.transform.position + new Vector3(0, 1, 0);
+                    else col.transform.position = col.transform.position + new Vector3(0, 1.5f, 0);
                     break;
                 case (Down):
                     if (shouldSplit) col.transform.position = col.transform.position + new Vector3(1, -0.5f, 0);
-                    else col.transform.position = col.transform.position + new Vector3(0, -1, 0);
+                    else col.transform.position = col.transform.position + new Vector3(0, -1.5f, 0);
                     break;
                 case (Left):
                     if (shouldSplit) col.transform.position = col.transform.position + new Vector3(-0.5f, -1, 0);
-                    else col.transform.position = col.transform.position + new Vector3(-1, 0, 0);
+                    else col.transform.position = col.transform.position + new Vector3(-1.5f, 0, 0);
                     break;
                 case (Right):
                     if (shouldSplit) col.transform.position = col.transform.position + new Vector3(0.5f, 1, 0);
-                    else col.transform.position = col.transform.position + new Vector3(1, 0, 0);
+                    else col.transform.position = col.transform.position + new Vector3(1.5f, 0, 0);
                     break;
             }
-
             shouldSplit = !shouldSplit;
         }
     }
