@@ -507,7 +507,6 @@ MonoBehaviour:
   buldings:
   - {fileID: 2021798138396487167, guid: 8345b9455b825ed4f93b314e08b6707f, type: 3}
   - {fileID: 1062909025800213114, guid: d6387679421176946a7ec94b2e3bb95d, type: 3}
-  - {fileID: 6758593693610615228, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
   testItem: {fileID: 620809771182812912, guid: f0fc2ca8b1df0db4589df029de23ef02, type: 3}
   directionArrow: {fileID: 6225872417007008152, guid: 6dd444e357f608343a229f15806e977f, type: 3}
   t: {fileID: 1583411730}
