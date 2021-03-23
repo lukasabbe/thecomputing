@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d024cde0fa28bf479b1f66bc77486c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 0
   ItemName: Scrap metal
   SellPrice: 1
 --- !u!61 &-2127941457207876521
