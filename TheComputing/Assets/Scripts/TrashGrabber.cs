@@ -28,6 +28,7 @@ public class TrashGrabber : MonoBehaviour
                 GameObject trash;
                 trash = Instantiate(trashItem);
                 trash.transform.position = dropLocation.transform.position;
+                trash.transform.Rotate(0f, 0f, Random.Range(0.0f, 360.0f));
                 dropCooldown = 0;
             }
         }
