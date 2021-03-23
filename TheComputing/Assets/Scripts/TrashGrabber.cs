@@ -6,6 +6,8 @@ public class TrashGrabber : MonoBehaviour
 {
     public GameObject dropLocation, trashItem;
     public float dropCooldown = 0; // Cooldown in seconds.
+
+    const int Up = 0, Down = 2, Right = 1, Left = 3;
     void Start()
     {
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2021798136862892535}
   - component: {fileID: 2021798136862892538}
   - component: {fileID: 2021798136862892533}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2021798137946463281}
   - component: {fileID: 2021798137946463287}
   - component: {fileID: 2021798137946463286}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 2021798138098932013}
   - component: {fileID: 2021798138098931987}
   - component: {fileID: 2021798138098931986}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 2021798138167799214}
   - component: {fileID: 2021798138167799212}
   - component: {fileID: 2021798138167799215}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,8 +375,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildScript: {fileID: 0}
   direction: 0
-  maxCarryingNumber: 5
   speedLVL: 0
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  capacity: 2
+  itemsOnConveyor: 0
 --- !u!61 &2021798138396487138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -389,8 +396,8 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1}
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -401,7 +408,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1}
+  m_Size: {x: 0.8, y: 0.99}
   m_EdgeRadius: 0
 --- !u!50 &2021798138396487139
 Rigidbody2D:

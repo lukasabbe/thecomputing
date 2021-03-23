@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 264722717}
   - component: {fileID: 264722721}
   - component: {fileID: 264722722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Seller
   m_TagString: Unb
   m_Icon: {fileID: 0}
@@ -399,6 +399,9 @@ MonoBehaviour:
   - {fileID: 7258107379429377471, guid: 44c2f7cbab7be404d8329121a1459113, type: 3}
   testItem: {fileID: 620809771182812912, guid: f0fc2ca8b1df0db4589df029de23ef02, type: 3}
   directionArrow: {fileID: 6225872417007008152, guid: 6dd444e357f608343a229f15806e977f, type: 3}
+  placedBuilding:
+    serializedVersion: 2
+    m_Bits: 256
   t: {fileID: 797207936}
   buildDirection: 0
 --- !u!114 &519420035
@@ -408,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -433,7 +436,7 @@ GameObject:
   - component: {fileID: 600167823}
   - component: {fileID: 600167822}
   - component: {fileID: 600167821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,6 +878,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709857352827549757, guid: bfd4b2fdf68d2484a88395ef14abc814, type: 3}
       propertyPath: m_Name
+      value: Trash Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709857352827549757, guid: bfd4b2fdf68d2484a88395ef14abc814, type: 3}
+      propertyPath: m_TagString
       value: Trash Area
       objectReference: {fileID: 0}
     m_RemovedComponents: []
