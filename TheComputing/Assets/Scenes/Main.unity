@@ -890,3 +890,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd4b2fdf68d2484a88395ef14abc814, type: 3}
+--- !u!1001 &2841700722420324620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016640, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356762535250016644, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
+      propertyPath: m_Name
+      value: Plastic Grabber
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 62914c70f2d451c429d8ac5a6889b58f, type: 3}
