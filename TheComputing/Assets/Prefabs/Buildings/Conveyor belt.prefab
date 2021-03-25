@@ -375,15 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildScript: {fileID: 0}
   direction: 0
+  maxCarryingNumber: 5
   speedLVL: 0
-  itemLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  conveyorLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  capacity: 2
-  itemsOnConveyor: 0
 --- !u!61 &2021798138396487138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -428,6 +421,6 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0

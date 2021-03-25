@@ -607,6 +607,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1423189074309221437, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
+      propertyPath: speedLVL
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423189074309221437, guid: 7f2235fc6c97fe94da4cc2a02a74e864, type: 3}
       propertyPath: trashItem
       value: 
       objectReference: {fileID: 9096375808607285824, guid: 175bd1ccd8f411d4b91458767e721e59, type: 3}
