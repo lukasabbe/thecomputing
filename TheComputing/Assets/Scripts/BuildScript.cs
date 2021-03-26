@@ -92,13 +92,20 @@ public class BuildScript : MonoBehaviour
         directionArrow.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
     }
     //Looks for gamesObj in a radius of mouse
-    GameObject findBuildingGameObject()
+    GameObject findBuildingGameObject(string tag)
     {
-        Collider2D c = Physics2D.OverlapCircle(buildPosition(), 0.02f);
-        GameObject g;
+        Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
+        GameObject g = null;
         try
         {
-            g = c.gameObject;
+            for(int i = 0; i < c.Length; i++)
+            {
+                if(c[i].tag == tag)
+                {
+                    g = c[i].gameObject;
+                }
+            }
+
         }
         catch
         {
@@ -109,16 +116,13 @@ public class BuildScript : MonoBehaviour
 
     void RefinerOpen()
     {
-        GameObject g = findBuildingGameObject();
+        GameObject g = findBuildingGameObject("Refiner");
         if(g != null)
         {
-            if (g.tag == "Refiner")
-            {
-                //test so it works (this will be the menu but i havent started with it yet)
-                isBuilderOn = false;
-                g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
-                gb = g.gameObject.transform.GetChild(4).gameObject;
-            }
+            //test so it works (this will be the menu but i havent started with it yet)
+            isBuilderOn = false;
+            g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+            gb = g.gameObject.transform.GetChild(4).gameObject;
         }
     }
     void DropItem()
