@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 8
   ItemName: Trash Plastic
   SellPrice: 1
+  refinsTo: 050000000600000007000000
 --- !u!61 &5499979390893359418
 BoxCollider2D:
   m_ObjectHideFlags: 0

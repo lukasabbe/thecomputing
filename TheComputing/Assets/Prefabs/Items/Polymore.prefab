@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4408402249025916572}
   - component: {fileID: -4240682514209479099}
   m_Layer: 0
-  m_Name: cables
+  m_Name: Polymore
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 6
   ItemName: cables
   SellPrice: 2
+  refinsTo: 
 --- !u!61 &9041135183341605386
 BoxCollider2D:
   m_ObjectHideFlags: 0

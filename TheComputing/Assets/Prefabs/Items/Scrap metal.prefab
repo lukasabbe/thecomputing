@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 0
   ItemName: Scrap metal
   SellPrice: 1
+  refinsTo: 01000000020000000300000004000000
 --- !u!61 &-2127941457207876521
 BoxCollider2D:
   m_ObjectHideFlags: 0
