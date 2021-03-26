@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 519165310641464189}
   - component: {fileID: -4098305560244657924}
   - component: {fileID: -7315024117328795344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circuit Board
   m_TagString: Item
   m_Icon: {fileID: 0}

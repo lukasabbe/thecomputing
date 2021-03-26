@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9041135183341605386}
   - component: {fileID: -4408402249025916572}
   - component: {fileID: -4240682514209479099}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Polymore
   m_TagString: Item
   m_Icon: {fileID: 0}
