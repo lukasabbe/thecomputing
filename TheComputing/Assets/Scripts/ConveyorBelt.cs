@@ -25,7 +25,7 @@ public class ConveyorBelt : MonoBehaviour
     }
     void Update()
     {
-        if (nextConveyorEmpty() || conveyorEmpty()) conveyorOn = true;
+        if (nextTileConveyor() && nextConveyorEmpty()) conveyorOn = true;
         else conveyorOn = false;
     }
     bool nextTileConveyor()
@@ -42,17 +42,15 @@ public class ConveyorBelt : MonoBehaviour
 
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + directionalOffset, new Vector2(0.5f, 0.5f), 0);
         foreach (Collider2D hitColliders in colliders)
-            if (hitColliders.tag == "Building") return true;
+            if (hitColliders.tag == "Building" || hitColliders.tag == "Unb") return true;
             else return false;
         return false;
     }
     bool conveyorEmpty()
     {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, new Vector2(0.5f, 0.5f), 0);
-        foreach (Collider2D hitColliders in colliders)
-            if (hitColliders.tag == "Item") return false;
-            else return true;
-        return true;
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, new Vector2(0.8f, 0.8f), 0);
+        if (colliders.Length >= 4) return false;
+        else return true;
     }
     bool nextConveyorEmpty()
     {
@@ -66,11 +64,9 @@ public class ConveyorBelt : MonoBehaviour
         if (direction == Left)
             directionalOffset = new Vector3(-1, 0, 0);
 
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + directionalOffset, new Vector2(0.5f, 0.5f), 0);
-        foreach (Collider2D hitColliders in colliders)
-            if (hitColliders.tag == "Item") return false;
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position + directionalOffset, new Vector2(0.8f, 0.8f), 0);
+            if (colliders.Length >= 4) return false;
             else return true;
-        return true;
     }
     void SetRotation()
     {
