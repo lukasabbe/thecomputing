@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8136241688430176493}
   - component: {fileID: 807039235256804347}
   - component: {fileID: 9041135183341605386}
+  - component: {fileID: -4408402249025916572}
+  - component: {fileID: -4240682514209479099}
   m_Layer: 0
   m_Name: cables
   m_TagString: Item
@@ -125,3 +127,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &-4408402249025916572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432684113606157756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215a4d5f4a836e408784d082ea427a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  rBody: {fileID: -4240682514209479099}
+--- !u!50 &-4240682514209479099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432684113606157756}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

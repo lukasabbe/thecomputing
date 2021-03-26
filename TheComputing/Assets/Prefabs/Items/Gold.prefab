@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2391780396567143329}
   - component: {fileID: 6551575018800851127}
   - component: {fileID: 3215679673105553734}
+  - component: {fileID: -3773571923383151829}
+  - component: {fileID: 5809518430651058058}
   m_Layer: 9
   m_Name: Gold
   m_TagString: Item
@@ -125,3 +127,43 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &-3773571923383151829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620809771182812912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215a4d5f4a836e408784d082ea427a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  rBody: {fileID: 5809518430651058058}
+--- !u!50 &5809518430651058058
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620809771182812912}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

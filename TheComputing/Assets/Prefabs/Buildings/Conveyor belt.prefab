@@ -333,10 +333,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021798138396487165}
-  - component: {fileID: 2021798138396487164}
   - component: {fileID: 2021798138396487138}
   - component: {fileID: 2021798138396487139}
-  m_Layer: 8
+  - component: {fileID: -2915719642183224099}
+  m_Layer: 10
   m_Name: Conveyor belt
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -361,22 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2021798138396487164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021798138396487167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3894751f38629d4d9055a666df13f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildScript: {fileID: 0}
-  direction: 0
-  maxCarryingNumber: 5
-  speedLVL: 0
 --- !u!61 &2021798138396487138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -424,3 +408,21 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2915719642183224099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021798138396487167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990df1307d6a62d499286d7bf112b99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 1
+  up: 0
+  right: 1
+  down: 2
+  left: 3
+  direction: 0
