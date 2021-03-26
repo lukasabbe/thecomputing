@@ -32,9 +32,7 @@ public class AutoCrafter : MonoBehaviour
         {
             if (hitCollider.gameObject.tag == "Item") // Checks if the required items are in the collider.
             {
-                
                 int itemID = hitCollider.gameObject.GetComponent<Item>().id;
-                print(itemID);
 
                 if (itemID == recipeID[0]) ITEM1 = (hitCollider).gameObject;
                 if (itemID == recipeID[1]) ITEM2 = (hitCollider).gameObject;
