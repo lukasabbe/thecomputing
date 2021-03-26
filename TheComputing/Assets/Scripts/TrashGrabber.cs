@@ -23,7 +23,7 @@ public class TrashGrabber : MonoBehaviour
         {
             float waitTime = 3; // Default drop waiting time at lvl 0
             if (dropCooldown < waitTime) dropCooldown = dropCooldown + (1 + speedLVL / 1.5f) * Time.deltaTime;
-            if (dropCooldown >= waitTime)
+            if (dropCooldown >= waitTime && EmptyInFront())
             {
                 GameObject trash;
                 trash = Instantiate(trashItem);
@@ -32,5 +32,19 @@ public class TrashGrabber : MonoBehaviour
                 dropCooldown = 0;
             }
         }
+    }
+    bool EmptyInFront() // Makes sure it only drops when its empty at the drop location, to avoid many items in the same place
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(dropLocation.transform.position, new Vector2(0.25f, 0.25f), 0);
+        
+        if (hitColliders == null) return false;
+        foreach (var hitCollider in hitColliders)
+        { 
+            if (hitCollider.gameObject.tag == "Item")
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
