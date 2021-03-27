@@ -10,8 +10,8 @@ public class ItemManager : MonoBehaviour{
             GameObject currentConveyor = Physics2D.OverlapCircle(transform.position, 0.2f, conveyorLayer).gameObject;
             ConveyorBeltManager currentConveyorScript = currentConveyor.GetComponent<ConveyorBeltManager>();
 
+            Vector2 velocity = Vector2.zero;
             if (currentConveyorScript.isOn){
-                Vector2 velocity = Vector2.zero;
                 switch (currentConveyorScript.direction){
                     case 0:
                         if (!Physics2D.OverlapBox(transform.position + new Vector3(0, 0.4f, 0), new Vector2(0.2f, 0.2f), 0, itemLayer)){
