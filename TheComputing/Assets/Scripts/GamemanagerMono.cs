@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 
 public class GamemanagerMono : MonoBehaviour{
-    public Canvas[] popup = new Canvas[2];
-
     private void Awake(){
         StartCoroutine(calculateIncome());
     }

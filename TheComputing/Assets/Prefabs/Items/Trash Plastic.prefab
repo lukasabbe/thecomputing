@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5499979390893359418}
   - component: {fileID: -9127680816829459629}
   - component: {fileID: 5347861868239132859}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trash Plastic
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0.44250622, b: 0.5481379, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 8
   ItemName: Trash Plastic
   SellPrice: 1
+  refinsTo: 050000000600000007000000
 --- !u!61 &5499979390893359418
 BoxCollider2D:
   m_ObjectHideFlags: 0
