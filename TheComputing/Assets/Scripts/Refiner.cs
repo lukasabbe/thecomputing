@@ -24,6 +24,7 @@ public class Refiner : MonoBehaviour
     private void Start()
     {
         //scrap buttons
+        //this for loop loads all the buttons with the right item.
         for(int i = 0; i <RefinerButtonItem.Count; i++)
         {
             obj item = new obj(findId(i),i);
@@ -41,6 +42,7 @@ public class Refiner : MonoBehaviour
             for (int b = 0; b < it.refinsTo.Count; b++)
             {
                 //Debug.Log("Count: " + i.refinsTo.Count + "\nItem now: " + i.refinsTo[b] + "\nch_item: " + ch_item);
+                //checks so the items is right. 
                 if(it.refinsTo[b] == ch_id) 
                 {
                     collision.GetComponent<Item>().id = i.id;
