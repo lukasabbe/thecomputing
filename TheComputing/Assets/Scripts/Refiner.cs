@@ -49,6 +49,7 @@ public class Refiner : MonoBehaviour
                     collision.GetComponent<Item>().ItemName = i.ItemName;
                     collision.GetComponent<Item>().SellPrice = i.SellPrice;
                     collision.gameObject.GetComponent<SpriteRenderer>().sprite = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().sprite;
+                    collision.gameObject.GetComponent<SpriteRenderer>().color = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().color;
                 }
             }
 
