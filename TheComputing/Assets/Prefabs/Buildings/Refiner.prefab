@@ -1720,7 +1720,7 @@ MonoBehaviour:
   - {fileID: 468001772898584710, guid: 6ef6a789b8b3eaf45aaf4aa96f8b251b, type: 3}
   ch_item: 0
   ch_id: 0
-  refinerWait: 2
+  refinerWait: 0
 --- !u!114 &6138596679300983542
 MonoBehaviour:
   m_ObjectHideFlags: 0
