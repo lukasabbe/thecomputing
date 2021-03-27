@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class AutoCrafter : MonoBehaviour
 {
+    //list of matiral
+    //*0 = gold
+    //*1 = silver
+    //*3 = plastic
+    //*4 = rubber
+    //ID list
+    //*1 = gold
+    //*2 = silver
+    //*5 = platic
+    //*7 = rubber
+
+
     public GameObject outputItem; // Output item is the item you want to craft, input items are the items required to craft
     public GameObject dropLocation;
     List<int> recipeID = new List<int>();
@@ -13,8 +25,8 @@ public class AutoCrafter : MonoBehaviour
 
         if (outputItemScript.id == 9) // Recipe for Circuit Board
         { // Recipe
-            recipeID.Add(8); // trash plastic
-            recipeID.Add(0); // scrap metal
+            recipeID.Add(1); // trash plastic
+            recipeID.Add(5); // scrap metal
         }
     }
     void Update()

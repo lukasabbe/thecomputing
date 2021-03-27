@@ -1705,6 +1705,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e62350aa5442fe45b031d879972a95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
   RefinerButtonItem:
   - {fileID: 1706936210434692394}
   - {fileID: 1706936212332892101}

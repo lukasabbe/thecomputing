@@ -35,7 +35,7 @@ public class Refiner : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Item")
+        if (collision.gameObject.tag == "Item")
         {
             //Gets the component
             Item i = ch_item_prefab[ch_item].GetComponent<Item>();
@@ -44,7 +44,7 @@ public class Refiner : MonoBehaviour
             {
                 //Debug.Log("Count: " + i.refinsTo.Count + "\nItem now: " + i.refinsTo[b] + "\nch_item: " + ch_item);
                 //checks so the items is right. 
-                if(it.refinsTo[b] == ch_id) 
+                if (it.refinsTo[b] == ch_id)
                 {
                     StartCoroutine(timer(refinerWait, collision, i));
                 }
