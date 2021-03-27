@@ -51,13 +51,31 @@ public class AutoCrafter : MonoBehaviour
 
                 // If all required materials are found, craft item.
                 if (ITEM1 != null && ITEM2 != null)
-                {   // Drop wanted item and delete required items.
-                    GameObject craftedItem = Instantiate(outputItem);
-                    craftedItem.transform.position = dropLocation.transform.position;
-                    Destroy(ITEM1);
-                    Destroy(ITEM2);
+                {   
+                    if (EmptyInFront())
+                    {
+                        // Drop wanted item and delete required items.
+                        GameObject craftedItem = Instantiate(outputItem);
+                        craftedItem.transform.position = dropLocation.transform.position;
+                        Destroy(ITEM1);
+                        Destroy(ITEM2);
+                    }
                 }
             }
         }
+    }
+    bool EmptyInFront() // Makes sure it only drops when its empty at the drop location, to avoid many items in the same place
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(dropLocation.transform.position, new Vector2(0.25f, 0.25f), 0);
+
+        if (hitColliders == null) return false;
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.tag == "Item")
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
