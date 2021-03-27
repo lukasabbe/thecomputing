@@ -38,8 +38,8 @@ public class ItemManager : MonoBehaviour{
                         }
                         break;
                 }
-                rBody.velocity = velocity;
             }
+            rBody.velocity = velocity;
         }
         else rBody.velocity = Vector2.zero;
     }
