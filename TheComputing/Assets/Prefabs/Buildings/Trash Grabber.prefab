@@ -571,8 +571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropLocation: {fileID: 362518073474437699}
-  trashItem: {fileID: 1938414008696484867, guid: 03cf413255eb3494a8191830c9f61d5a, type: 3}
-  dropCooldown: 0
+  trashItem: {fileID: 9096375808607285824, guid: 175bd1ccd8f411d4b91458767e721e59, type: 3}
+  speedLVL: 0
 --- !u!114 &-8335036192227914282
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,8 +28,6 @@ public class BuildScript : MonoBehaviour
             ch_ShadowBuilding.Add(Instantiate(directionArrow[i]));
             if (i > 0) ch_ShadowBuilding[i].SetActive(false);
         }
-
-        Gamemanager.moneyText = t;
     }
     void Update()
     {

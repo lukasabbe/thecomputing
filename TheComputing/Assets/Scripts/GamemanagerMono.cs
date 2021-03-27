@@ -11,9 +11,9 @@ public class GamemanagerMono : MonoBehaviour{
     IEnumerator calculateIncome(){
         int currentMoney = Gamemanager.money;
 
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(30);
 
-        Gamemanager.income = Gamemanager.money - currentMoney;
+        Gamemanager.income = (Gamemanager.money - currentMoney) * 2;
 
         StartCoroutine(calculateIncome());
     }
