@@ -5,6 +5,7 @@ using UnityEngine;
 public class ConveyorBeltManager : MonoBehaviour
 {
     public float speedMultiplier = 1;
+    public bool isOn = true;
 
     [HideInInspector] public int up = 0, right = 1, down = 2, left = 3;
     public int direction = 0;
