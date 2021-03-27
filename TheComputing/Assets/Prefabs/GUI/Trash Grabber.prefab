@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6758593693610615229}
   m_Layer: 8
   m_Name: Trash Grabber
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

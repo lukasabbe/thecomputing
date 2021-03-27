@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 7258107379429377443}
   m_Layer: 8
   m_Name: Splitter
-  m_TagString: Building
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
