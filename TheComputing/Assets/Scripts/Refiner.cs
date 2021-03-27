@@ -21,6 +21,7 @@ public class Refiner : MonoBehaviour
     public List<GameObject> ch_item_prefab;
     public int ch_item;
     public int ch_id;
+    public int refinerWait;
     private void Start()
     {
         //scrap buttons
@@ -45,11 +46,7 @@ public class Refiner : MonoBehaviour
                 //checks so the items is right. 
                 if(it.refinsTo[b] == ch_id) 
                 {
-                    collision.GetComponent<Item>().id = i.id;
-                    collision.GetComponent<Item>().ItemName = i.ItemName;
-                    collision.GetComponent<Item>().SellPrice = i.SellPrice;
-                    collision.gameObject.GetComponent<SpriteRenderer>().sprite = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().sprite;
-                    collision.gameObject.GetComponent<SpriteRenderer>().color = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().color;
+                    StartCoroutine(timer(refinerWait, collision, i));
                 }
             }
 
@@ -79,6 +76,17 @@ public class Refiner : MonoBehaviour
             return 7;
         }
         return 100;
+    }
+    IEnumerator timer(int waitTime, Collider2D collision, Item i)
+    {
+        gameObject.GetComponent<ConveyorBeltManager>().isOn = false;
+        yield return new WaitForSeconds(waitTime);
+        gameObject.GetComponent<ConveyorBeltManager>().isOn = true;
+        collision.GetComponent<Item>().id = i.id;
+        collision.GetComponent<Item>().ItemName = i.ItemName;
+        collision.GetComponent<Item>().SellPrice = i.SellPrice;
+        collision.gameObject.GetComponent<SpriteRenderer>().sprite = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().sprite;
+        collision.gameObject.GetComponent<SpriteRenderer>().color = ch_item_prefab[ch_item].GetComponent<SpriteRenderer>().color;
     }
 }
 class obj
