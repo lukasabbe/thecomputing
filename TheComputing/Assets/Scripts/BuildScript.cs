@@ -21,7 +21,7 @@ public class BuildScript : MonoBehaviour
     void Start()
     {
         directionArrow = Instantiate(directionArrow);
-        Gamemanager.t = t;
+        Gamemanager.moneyText = t;
     }
     void Update()
     {
