@@ -7,7 +7,9 @@ public class BuildScript : MonoBehaviour
 {
     public GameObject[] buldings;
     public GameObject testItem; // Test item
-    public GameObject directionArrow;
+    public GameObject[] directionArrow;
+    List<GameObject> ch_ShadowBuilding = new List<GameObject>();
+    public int num_building_shadow = 0;
 
     public LayerMask placedBuilding; //Buildings placed by the player
 
@@ -20,7 +22,12 @@ public class BuildScript : MonoBehaviour
     private int building = 0;
     void Start()
     {
-        directionArrow = Instantiate(directionArrow);
+        for(int i = 0; i < directionArrow.Length; i++)
+        {
+            ch_ShadowBuilding.Add(Instantiate(directionArrow[i]));
+            if (i > 0) ch_ShadowBuilding[i].SetActive(false);
+        }
+
         Gamemanager.t = t;
     }
     void Update()
@@ -83,13 +90,25 @@ public class BuildScript : MonoBehaviour
     }
     void ChangeBuilding()
     {
-        if (building == buldings.Length -1) building = 0;
-        else building++;
+        if (building == buldings.Length - 1)
+        {
+            building = 0;
+            ch_ShadowBuilding[num_building_shadow].SetActive(false);
+            num_building_shadow = 0;
+            ch_ShadowBuilding[num_building_shadow].SetActive(true);
+        }
+        else
+        {
+            building++;
+            num_building_shadow++;
+            ch_ShadowBuilding[num_building_shadow].SetActive(true);
+            ch_ShadowBuilding[num_building_shadow - 1].SetActive(false);
+        }
     }
     void DirectionArrow()
     {
-        directionArrow.transform.position = buildPosition();
-        directionArrow.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
+        ch_ShadowBuilding[num_building_shadow].transform.position = buildPosition();
+        ch_ShadowBuilding[num_building_shadow].transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
     }
     //Looks for gamesObj in a radius of mouse
     GameObject findBuildingGameObject(string tag)
