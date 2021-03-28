@@ -74,6 +74,7 @@ public class BuildScript : MonoBehaviour
     {
         GameObject build = Instantiate(buldings[building]);
         build.transform.position = buildPosition();
+        build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
     }
     void Break()
     {
