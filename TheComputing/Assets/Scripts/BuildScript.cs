@@ -20,6 +20,7 @@ public class BuildScript : MonoBehaviour
     private GameObject gb;
     //Equpied building
     private int building = 0;
+    private bool faildKey;
     void Start()
     {
         Gamemanager.moneyText = t;
@@ -46,6 +47,7 @@ public class BuildScript : MonoBehaviour
         // You can build if no object is in the tile
         if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
 
+
         if (Input.GetKeyDown("t")) ChangeBuilding();
 
         if (Input.GetMouseButtonDown(1)) Break();
@@ -69,11 +71,18 @@ public class BuildScript : MonoBehaviour
             if (buildDirection > 0) buildDirection--;
             else buildDirection = 3;
         }
+        if (Input.GetKey("h") && Input.GetKey(KeyCode.LeftControl)) removeAllItems();
+        if (Input.GetKey("h"))
+        {
+            GameObject g = findBuildingGameObject("Item");
+            Destroy(g);
+        }
     }
     void Build()//test
     {
         GameObject build = Instantiate(buldings[building]);
         build.transform.position = buildPosition();
+        build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
     }
     void Break()
     {
@@ -131,7 +140,16 @@ public class BuildScript : MonoBehaviour
         }
         return g;
     }
+    void removeAllItems()
+    {
 
+        GameObject[] items;
+        items = GameObject.FindGameObjectsWithTag("Item");
+        foreach(GameObject i in items)
+        {
+            Destroy(i);
+        }
+    }
     void RefinerOpen()
     {
         GameObject g = findBuildingGameObject("Refiner");
