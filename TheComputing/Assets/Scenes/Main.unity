@@ -600,6 +600,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1754199099155245706, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
+      propertyPath: directionArrow.Array.data[3]
+      value: 
+      objectReference: {fileID: 6356762535250016644, guid: ba95da9a534ec3e48badfcbde70fd9cf, type: 3}
+    - target: {fileID: 1754199099155245706, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
+      propertyPath: directionArrow.Array.data[6]
+      value: 
+      objectReference: {fileID: 4361434772404187152, guid: 108eda1bbf30f2f42bb8ae8d4ccdbae8, type: 3}
     - target: {fileID: 1754199099433074551, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
       propertyPath: m_SizeDelta.y
       value: 60
