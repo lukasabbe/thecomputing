@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1974308810719774461}
   - component: {fileID: 1974308810719774463}
   - component: {fileID: 1974308810719774462}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1974308811488156256}
   - component: {fileID: 1974308811488156258}
   - component: {fileID: 1974308811488156257}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1974308812054144722}
   - component: {fileID: 1974308812054144724}
   - component: {fileID: 1974308812054144723}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7258107378706336183}
   - component: {fileID: 7258107378706336186}
   - component: {fileID: 7258107378706336181}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,8 @@ GameObject:
   - component: {fileID: 7258107379429377442}
   - component: {fileID: 7258107379429377443}
   - component: {fileID: 7258107379429377408}
-  m_Layer: 8
+  - component: {fileID: -5051156616864484188}
+  m_Layer: 10
   m_Name: Splitter
   m_TagString: Building
   m_Icon: {fileID: 0}
@@ -423,10 +424,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce342d60cf5de254dbc08c879ec20edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  conveyorLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   buildScript: {fileID: 0}
   direction: 0
-  maxCarryingNumber: 5
-  speedLVL: 0
+--- !u!114 &-5051156616864484188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258107379429377471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990df1307d6a62d499286d7bf112b99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 1
+  isOn: 1
+  up: 0
+  right: 1
+  down: 2
+  left: 3
+  direction: 0
 --- !u!1 &7258107379540362729
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +462,7 @@ GameObject:
   - component: {fileID: 7258107379540362734}
   - component: {fileID: 7258107379540362732}
   - component: {fileID: 7258107379540362735}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +543,7 @@ GameObject:
   - component: {fileID: 7258107379735228781}
   - component: {fileID: 7258107379735228755}
   - component: {fileID: 7258107379735228754}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +624,7 @@ GameObject:
   - component: {fileID: 7258107379788870769}
   - component: {fileID: 7258107379788870775}
   - component: {fileID: 7258107379788870774}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
