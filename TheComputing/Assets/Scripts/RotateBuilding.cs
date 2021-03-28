@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateBuilding : MonoBehaviour
 {
+    [HideInInspector]
     public BuildScript buildScript;
     public int direction = 0;
 
