@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     void OnPlay()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     void OnQuit()
     {

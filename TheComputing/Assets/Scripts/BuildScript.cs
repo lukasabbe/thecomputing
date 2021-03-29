@@ -20,7 +20,6 @@ public class BuildScript : MonoBehaviour
     private GameObject gb;
     //Equpied building
     private int building = 0;
-    private bool faildKey;
     void Start()
     {
         Gamemanager.moneyText = t;
@@ -48,7 +47,8 @@ public class BuildScript : MonoBehaviour
         if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
 
 
-        if (Input.GetKeyDown("t")) ChangeBuilding();
+        if (Input.GetKeyDown("t") && !Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(true);
+        else if (Input.GetKeyDown("t") && Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(false);
 
         if (Input.GetMouseButtonDown(1)) Break();
 
@@ -96,21 +96,41 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
-    void ChangeBuilding()
+    void ChangeBuilding(bool dir)
     {
-        if (building == buldings.Length - 1)
+        if (dir)
         {
-            building = 0;
-            ch_ShadowBuilding[num_building_shadow].SetActive(false);
-            num_building_shadow = 0;
-            ch_ShadowBuilding[num_building_shadow].SetActive(true);
+            if (building == buldings.Length - 1)
+            {
+                building = 0;
+                ch_ShadowBuilding[num_building_shadow].SetActive(false);
+                num_building_shadow = 0;
+                ch_ShadowBuilding[num_building_shadow].SetActive(true);
+            }
+            else
+            {
+                building++;
+                num_building_shadow++;
+                ch_ShadowBuilding[num_building_shadow].SetActive(true);
+                ch_ShadowBuilding[num_building_shadow - 1].SetActive(false);
+            }
         }
-        else
+        else if(!dir)
         {
-            building++;
-            num_building_shadow++;
-            ch_ShadowBuilding[num_building_shadow].SetActive(true);
-            ch_ShadowBuilding[num_building_shadow - 1].SetActive(false);
+            if (building == 0)
+            {
+                building = buldings.Length -1;
+                ch_ShadowBuilding[num_building_shadow].SetActive(false);
+                num_building_shadow = buldings.Length - 1;
+                ch_ShadowBuilding[num_building_shadow].SetActive(true);
+            }
+            else
+            {
+                building--;
+                num_building_shadow--;
+                ch_ShadowBuilding[num_building_shadow].SetActive(true);
+                ch_ShadowBuilding[num_building_shadow + 1].SetActive(false);
+            }
         }
     }
     void DirectionArrow()
