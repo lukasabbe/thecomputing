@@ -186,12 +186,12 @@ public class BuildScript : MonoBehaviour
         GameObject item = Instantiate(testItem);
         item.transform.position = cursorPosition();
     }
-    Vector2 cursorPosition() // The X and Y position from the cursor
+    public Vector2 cursorPosition() // The X and Y position from the cursor
     {
         Vector2 temp = Input.mousePosition;
         return Camera.main.ScreenToWorldPoint(temp); // Puts the cursor position into a Vector3 value
     }
-    Vector2 buildPosition() // Rounded value of the cursor position to fit into tiles
+    public Vector2 buildPosition() // Rounded value of the cursor position to fit into tiles
     {
         return new Vector2(Mathf.Floor(cursorPosition().x) + 0.5f, Mathf.Floor(cursorPosition().y) + 0.5f);
     }
