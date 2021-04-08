@@ -56,6 +56,10 @@ public class BuildScript : MonoBehaviour
         //opem refiner (Test)
         if (Input.GetKeyDown("e")) RefinerOpen();
 
+        if (Input.GetKeyDown("o")) saveGame();
+
+        if (Input.GetKeyDown("l")) loadGame();
+
         // press r to rotate
         if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
         else if (Input.GetKeyDown("r")) buildDirection = 0;
@@ -81,7 +85,9 @@ public class BuildScript : MonoBehaviour
     void Build()//test
     {
         GameObject build = Instantiate(buldings[building]);
+        Gamemanager.Buildings.Add(build);
         build.transform.position = buildPosition();
+        build.GetComponent<BuildingId>().rot = buildDirection;
         build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
     }
     void Break()
@@ -92,6 +98,8 @@ public class BuildScript : MonoBehaviour
         { // Destroys the gameObject
             if(hitCollider.gameObject.tag != "Unb" && hitCollider.gameObject.tag != "Trash Area") //Doesnt destroy gameobj with the unb tag
             {
+                int index = Gamemanager.Buildings.FindIndex(g => g == hitCollider.gameObject);
+                Gamemanager.Buildings.RemoveAt(index);
                 Destroy((hitCollider).gameObject);
             }
         }
@@ -199,5 +207,64 @@ public class BuildScript : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(buildPosition(), 0.02f, placedBuilding)) return false;
         else return true;
+    }
+
+    //saves the game
+    void saveGame()
+    {
+        Debug.Log("Saved game");
+        SaveGame.SaveMap();
+    }
+    //loads the files
+    void loadGame()
+    {
+        MapData g = SaveGame.loadGame();
+        Debug.Log(g.buildingID.Length);
+        int y = 0;
+        for(int i = 0; i < g.buildingID.Length; i++)
+        {
+            if(g.buildingID[i] == 0)
+            {
+                Debug.Log(g.rotation[i]);
+                GameObject r = Instantiate(buldings[0],new Vector3(g.buildingPos[y], g.buildingPos[y+1], g.buildingPos[y + 2]),Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 1)
+            {
+                GameObject r = Instantiate(buldings[1], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 2)
+            {
+                GameObject r = Instantiate(buldings[5], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 3)
+            {
+                GameObject r = Instantiate(buldings[3], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 4)
+            {
+                GameObject r = Instantiate(buldings[2], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 5)
+            {
+                GameObject r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            if (g.buildingID[i] == 6)
+            {
+                GameObject r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+            }
+            y += 3;
+        }
+
+
+
+        Gamemanager.money = g.currentMoney;
+        Gamemanager.uppdateText();
     }
 }

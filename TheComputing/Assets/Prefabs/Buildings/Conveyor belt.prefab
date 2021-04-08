@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 2021798138396487138}
   - component: {fileID: 2021798138396487139}
   - component: {fileID: -2915719642183224099}
+  - component: {fileID: 7252168035817151084}
   m_Layer: 10
   m_Name: Conveyor belt
   m_TagString: Building
@@ -421,8 +422,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1
+  isOn: 1
   up: 0
   right: 1
   down: 2
   left: 3
   direction: 0
+--- !u!114 &7252168035817151084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021798138396487167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0

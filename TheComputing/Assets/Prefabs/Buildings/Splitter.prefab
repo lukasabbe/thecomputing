@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 7258107379429377443}
   - component: {fileID: 7258107379429377408}
   - component: {fileID: -5051156616864484188}
+  - component: {fileID: 7425573337718344192}
   m_Layer: 10
   m_Name: Splitter
   m_TagString: Building
@@ -451,6 +452,19 @@ MonoBehaviour:
   down: 2
   left: 3
   direction: 0
+--- !u!114 &7425573337718344192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258107379429377471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5
 --- !u!1 &7258107379540362729
 GameObject:
   m_ObjectHideFlags: 0

@@ -1620,6 +1620,7 @@ GameObject:
   - component: {fileID: 1706936211740733597}
   - component: {fileID: 1706936211740733598}
   - component: {fileID: 6138596679300983542}
+  - component: {fileID: 3695702746743942262}
   m_Layer: 10
   m_Name: Refiner
   m_TagString: Refiner
@@ -1705,9 +1706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e62350aa5442fe45b031d879972a95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemLayer:
-    serializedVersion: 2
-    m_Bits: 512
   RefinerButtonItem:
   - {fileID: 1706936210434692394}
   - {fileID: 1706936212332892101}
@@ -1740,6 +1738,19 @@ MonoBehaviour:
   down: 2
   left: 3
   direction: 0
+--- !u!114 &3695702746743942262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706936211740733599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
 --- !u!1 &1706936211907928629
 GameObject:
   m_ObjectHideFlags: 0
