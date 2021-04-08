@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8935314969554364374}
   - component: {fileID: 8935314969554364375}
   - component: {fileID: 8452667954780026425}
+  - component: {fileID: -9137976573945690208}
   m_Layer: 11
   m_Name: Tunnel
   m_TagString: Building
@@ -102,6 +103,19 @@ MonoBehaviour:
   itemLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &-9137976573945690208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8935314969554364363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6
 --- !u!1 &8935314969665611677
 GameObject:
   m_ObjectHideFlags: 0

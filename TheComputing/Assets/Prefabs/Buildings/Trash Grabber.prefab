@@ -529,6 +529,7 @@ GameObject:
   - component: {fileID: -8335036192227914282}
   - component: {fileID: 6758593693610615230}
   - component: {fileID: 6758593693610615229}
+  - component: {fileID: -7548484515814460652}
   m_Layer: 8
   m_Name: Trash Grabber
   m_TagString: Building
@@ -634,6 +635,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-7548484515814460652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6758593693610615228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
 --- !u!1 &6758593693709954722
 GameObject:
   m_ObjectHideFlags: 0
