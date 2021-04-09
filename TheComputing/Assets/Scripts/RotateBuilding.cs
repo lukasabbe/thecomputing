@@ -7,6 +7,7 @@ public class RotateBuilding : MonoBehaviour
     [HideInInspector]
     public BuildScript buildScript;
     public int direction = 0;
+    public bool rotationSpawnd = false;
 
     void Start()
     {
@@ -16,10 +17,11 @@ public class RotateBuilding : MonoBehaviour
 
         // Sets the buildings direction to the buildDirection
         direction = buildScript.buildDirection;
-        SetRotation();
+        if(!rotationSpawnd) SetRotation();
     }
-    void SetRotation()
+    public void SetRotation()
     {
         transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * direction);
+        rotationSpawnd = true;
     }
 }

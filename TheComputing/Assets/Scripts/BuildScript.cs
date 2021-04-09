@@ -249,11 +249,15 @@ public class BuildScript : MonoBehaviour
             {
                 r = Instantiate(buldings[3], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<RotateBuilding>().direction = g.rotation[i];
+                r.GetComponent<RotateBuilding>().SetRotation();
             }
             if (g.buildingID[i] == 4)
             {
                 r = Instantiate(buldings[2], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<RotateBuilding>().direction = g.rotation[i];
+                r.GetComponent<RotateBuilding>().SetRotation();
             }
             if (g.buildingID[i] == 5)
             {
@@ -266,6 +270,8 @@ public class BuildScript : MonoBehaviour
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             Gamemanager.Buildings.Add(r);
+            r.GetComponent<BuildingId>().id = g.buildingID[i];
+            r.GetComponent<BuildingId>().rot = g.rotation[i];
             y += 3;
         }
 
