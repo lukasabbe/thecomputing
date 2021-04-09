@@ -14,6 +14,8 @@ public static class SaveGame
         float[] pos = new float[Gamemanager.Buildings.Count * 3];
         int[] id = new int[Gamemanager.Buildings.Count];
         int[] rot = new int[Gamemanager.Buildings.Count];
+        bool[] opt = new bool[Gamemanager.Buildings.Count];
+        refinerData[] Rdata = new refinerData[Gamemanager.Buildings.Count];
         //Debug.Log("Yes1 " + Gamemanager.Buildings.Count +" "+ pos.Length);
         //0 1 2: 0 + 3: 3 4 5
         int h = 0;
@@ -27,9 +29,19 @@ public static class SaveGame
         for (int i = 0; i < id.Length; i++)
         {
             id[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().id;
+            if(id[i] == 1)
+            {
+                opt[i] = true;
+                Rdata[i] = new refinerData(Gamemanager.Buildings[i].GetComponent<Refiner>().ch_id, Gamemanager.Buildings[i].GetComponent<Refiner>().ch_item);
+            }
+            else
+            {
+                opt[i] = false;
+                Rdata[i] = null;
+            }
             rot[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().rot;
         }
-        MapData data = new MapData(Gamemanager.money, pos, id, rot);
+        MapData data = new MapData(Gamemanager.money, pos, id, rot, opt, Rdata);
 
         formater.Serialize(strem, data);
         strem.Close();

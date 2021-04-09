@@ -239,6 +239,8 @@ public class BuildScript : MonoBehaviour
                 r = Instantiate(buldings[1], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
+                r.GetComponent<Refiner>().ch_id = g.Rdata[i].id;
+                r.GetComponent<Refiner>().ch_item = g.Rdata[i].item;
             }
             if (g.buildingID[i] == 2)
             {
