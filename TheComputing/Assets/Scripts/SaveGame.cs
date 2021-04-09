@@ -37,6 +37,7 @@ public static class SaveGame
     public static MapData loadGame()
     {
         string path = Application.persistentDataPath + "/mapData.TheComputing";
+        Debug.Log(path);
         if (File.Exists(path))
         {
             BinaryFormatter formater = new BinaryFormatter();

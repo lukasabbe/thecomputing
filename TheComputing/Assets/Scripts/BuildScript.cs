@@ -98,8 +98,11 @@ public class BuildScript : MonoBehaviour
         { // Destroys the gameObject
             if(hitCollider.gameObject.tag != "Unb" && hitCollider.gameObject.tag != "Trash Area") //Doesnt destroy gameobj with the unb tag
             {
-                int index = Gamemanager.Buildings.FindIndex(g => g == hitCollider.gameObject);
-                Gamemanager.Buildings.RemoveAt(index);
+                if (hitCollider.tag == "Building" || hitCollider.tag == "Refiner") 
+                {
+                    int index = Gamemanager.Buildings.FindIndex(g => g == hitCollider.gameObject);
+                    Gamemanager.Buildings.RemoveAt(index);
+                }
                 Destroy((hitCollider).gameObject);
             }
         }
@@ -223,42 +226,46 @@ public class BuildScript : MonoBehaviour
         int y = 0;
         for(int i = 0; i < g.buildingID.Length; i++)
         {
-            if(g.buildingID[i] == 0)
+            GameObject r = null;
+            if (g.buildingID[i] == 0)
             {
                 Debug.Log(g.rotation[i]);
-                GameObject r = Instantiate(buldings[0],new Vector3(g.buildingPos[y], g.buildingPos[y+1], g.buildingPos[y + 2]),Quaternion.identity);
+                r = Instantiate(buldings[0],new Vector3(g.buildingPos[y], g.buildingPos[y+1], g.buildingPos[y + 2]),Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
             }
             if (g.buildingID[i] == 1)
             {
-                GameObject r = Instantiate(buldings[1], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[1], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
             }
             if (g.buildingID[i] == 2)
             {
-                GameObject r = Instantiate(buldings[5], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[5], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             if (g.buildingID[i] == 3)
             {
-                GameObject r = Instantiate(buldings[3], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[3], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             if (g.buildingID[i] == 4)
             {
-                GameObject r = Instantiate(buldings[2], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[2], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             if (g.buildingID[i] == 5)
             {
-                GameObject r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             if (g.buildingID[i] == 6)
             {
-                GameObject r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
+            Gamemanager.Buildings.Add(r);
             y += 3;
         }
 
