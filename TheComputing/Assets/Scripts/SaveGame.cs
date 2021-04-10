@@ -6,49 +6,52 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveGame
 {
-    public static void SaveMap()
+    public static void SaveMap(int slot)
     {
-        BinaryFormatter formater = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/mapData.TheComputing";
-        FileStream strem = new FileStream(path, FileMode.Create);
-        float[] pos = new float[Gamemanager.Buildings.Count * 3];
-        int[] id = new int[Gamemanager.Buildings.Count];
-        int[] rot = new int[Gamemanager.Buildings.Count];
-        bool[] opt = new bool[Gamemanager.Buildings.Count];
-        refinerData[] Rdata = new refinerData[Gamemanager.Buildings.Count];
-        //Debug.Log("Yes1 " + Gamemanager.Buildings.Count +" "+ pos.Length);
-        //0 1 2: 0 + 3: 3 4 5
-        int h = 0;
-        for (int i = 0; i < pos.Length - 1; i+=3)
+        if(slot >= 0)
         {
-            pos[i] = Gamemanager.Buildings[h].transform.position.x;
-            pos[i+1] = Gamemanager.Buildings[h].transform.position.y;
-            pos[i+2] = Gamemanager.Buildings[h].transform.position.z;
-            h++;
-        }
-        for (int i = 0; i < id.Length; i++)
-        {
-            id[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().id;
-            if(id[i] == 1)
+            BinaryFormatter formater = new BinaryFormatter();
+            string path = Application.persistentDataPath + "/mapData"+slot+".TheComputing";
+            FileStream strem = new FileStream(path, FileMode.Create);
+            float[] pos = new float[Gamemanager.Buildings.Count * 3];
+            int[] id = new int[Gamemanager.Buildings.Count];
+            int[] rot = new int[Gamemanager.Buildings.Count];
+            bool[] opt = new bool[Gamemanager.Buildings.Count];
+            refinerData[] Rdata = new refinerData[Gamemanager.Buildings.Count];
+            //Debug.Log("Yes1 " + Gamemanager.Buildings.Count +" "+ pos.Length);
+            //0 1 2: 0 + 3: 3 4 5
+            int h = 0;
+            for (int i = 0; i < pos.Length - 1; i += 3)
             {
-                opt[i] = true;
-                Rdata[i] = new refinerData(Gamemanager.Buildings[i].GetComponent<Refiner>().ch_id, Gamemanager.Buildings[i].GetComponent<Refiner>().ch_item);
+                pos[i] = Gamemanager.Buildings[h].transform.position.x;
+                pos[i + 1] = Gamemanager.Buildings[h].transform.position.y;
+                pos[i + 2] = Gamemanager.Buildings[h].transform.position.z;
+                h++;
             }
-            else
+            for (int i = 0; i < id.Length; i++)
             {
-                opt[i] = false;
-                Rdata[i] = null;
+                id[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().id;
+                if (id[i] == 1)
+                {
+                    opt[i] = true;
+                    Rdata[i] = new refinerData(Gamemanager.Buildings[i].GetComponent<Refiner>().ch_id, Gamemanager.Buildings[i].GetComponent<Refiner>().ch_item);
+                }
+                else
+                {
+                    opt[i] = false;
+                    Rdata[i] = null;
+                }
+                rot[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().rot;
             }
-            rot[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().rot;
-        }
-        MapData data = new MapData(Gamemanager.money, pos, id, rot, opt, Rdata);
+            MapData data = new MapData(Gamemanager.money, pos, id, rot, opt, Rdata);
 
-        formater.Serialize(strem, data);
-        strem.Close();
+            formater.Serialize(strem, data);
+            strem.Close();
+        }
     }
-    public static MapData loadGame()
+    public static MapData loadGame(int slot)
     {
-        string path = Application.persistentDataPath + "/mapData.TheComputing";
+        string path = Application.persistentDataPath + "/mapData" + slot + ".TheComputing";
         Debug.Log(path);
         if (File.Exists(path))
         {

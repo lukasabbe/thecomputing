@@ -11,6 +11,7 @@ public class BuildScript : MonoBehaviour
     List<GameObject> ch_ShadowBuilding = new List<GameObject>();
     public int num_building_shadow = 0;
 
+
     public LayerMask placedBuilding; //Buildings placed by the player
 
     //send to static gameManger
@@ -20,6 +21,8 @@ public class BuildScript : MonoBehaviour
     private GameObject gb;
     //Equpied building
     private int building = 0;
+
+    public GameObject escMenu;
     void Start()
     {
         Gamemanager.moneyText = t;
@@ -36,16 +39,19 @@ public class BuildScript : MonoBehaviour
             PlayerInputs();
             DirectionArrow();
         }
-        else if (Input.GetKeyDown("e") && isBuilderOn == false){
+        else if (Input.GetKeyDown("e") && isBuilderOn == false)
+        {
             isBuilderOn = true;
             gb.SetActive(false);
         }
+        else if (Input.GetKeyDown(KeyCode.Escape)) onEsc();
     }
     void PlayerInputs()
     {
         // You can build if no object is in the tile
         if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
 
+        if (Input.GetKeyDown(KeyCode.Escape)) onEsc();
 
         if (Input.GetKeyDown("t") && !Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(true);
         else if (Input.GetKeyDown("t") && Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(false);
@@ -58,7 +64,7 @@ public class BuildScript : MonoBehaviour
 
         if (Input.GetKeyDown("o")) saveGame();
 
-        if (Input.GetKeyDown("l")) loadGame();
+        if (Input.GetKeyDown("l")) loadGame(0);
 
         // press r to rotate
         if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
@@ -107,6 +113,21 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
+
+    void onEsc()
+    {
+        if (escMenu.activeSelf)
+        {
+            escMenu.SetActive(false);
+            isBuilderOn = true;
+        }
+        else
+        {
+            escMenu.SetActive(true);
+            isBuilderOn = false;
+        }
+    }
+
     void ChangeBuilding(bool dir)
     {
         if (dir)
@@ -216,20 +237,20 @@ public class BuildScript : MonoBehaviour
     void saveGame()
     {
         Debug.Log("Saved game");
-        SaveGame.SaveMap();
+        SaveGame.SaveMap(0);
     }
     //loads the files
-    void loadGame()
+    public void loadGame(int slot)
     {
-        MapData g = SaveGame.loadGame();
-        Debug.Log(g.buildingID.Length);
+        
+        MapData g = SaveGame.loadGame(slot);
+        if (g == null) return;
         int y = 0;
         for(int i = 0; i < g.buildingID.Length; i++)
         {
             GameObject r = null;
             if (g.buildingID[i] == 0)
             {
-                Debug.Log(g.rotation[i]);
                 r = Instantiate(buldings[0],new Vector3(g.buildingPos[y], g.buildingPos[y+1], g.buildingPos[y + 2]),Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
@@ -270,6 +291,7 @@ public class BuildScript : MonoBehaviour
             {
                 r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<Tunnel>().sh(g.rotation[i]);
             }
             Gamemanager.Buildings.Add(r);
             r.GetComponent<BuildingId>().id = g.buildingID[i];

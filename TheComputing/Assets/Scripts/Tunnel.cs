@@ -11,33 +11,45 @@ public class Tunnel : MonoBehaviour{
     public LayerMask itemLayer;
 
     private void Awake(){
-        direction = Camera.main.GetComponent<BuildScript>().buildDirection;
+        sh(Camera.main.GetComponent<BuildScript>().buildDirection);
+    }
 
-        for (int i = 1; i < tunnelRange; i++){
-            switch (direction){
+    public void sh(int dir)
+    {
+        direction = dir;
+
+        for (int i = 1; i < tunnelRange; i++)
+        {
+            switch (direction)
+            {
                 case Up:
-                    if (Physics2D.OverlapCircle(transform.position + new Vector3(0, i, 0), 0.2f, tunnelLayer)){
+                    if (Physics2D.OverlapCircle(transform.position + new Vector3(0, i, 0), 0.2f, tunnelLayer))
+                    {
                         Physics2D.OverlapCircle(transform.position + new Vector3(0, i, 0), 0.2f, tunnelLayer).GetComponent<Tunnel>().tunnel();
                     }
                     break;
                 case Down:
-                    if (Physics2D.OverlapCircle(transform.position + new Vector3(0, -i, 0), 0.2f, tunnelLayer)){
+                    if (Physics2D.OverlapCircle(transform.position + new Vector3(0, -i, 0), 0.2f, tunnelLayer))
+                    {
                         Physics2D.OverlapCircle(transform.position + new Vector3(0, -i, 0), 0.2f, tunnelLayer).GetComponent<Tunnel>().tunnel();
                     }
                     break;
                 case Left:
-                    if (Physics2D.OverlapCircle(transform.position + new Vector3(i, 0, 0), 0.2f, tunnelLayer)){
+                    if (Physics2D.OverlapCircle(transform.position + new Vector3(i, 0, 0), 0.2f, tunnelLayer))
+                    {
                         Physics2D.OverlapCircle(transform.position + new Vector3(i, 0, 0), 0.2f, tunnelLayer).GetComponent<Tunnel>().tunnel();
                     }
                     break;
                 case Right:
-                    if (Physics2D.OverlapCircle(transform.position + new Vector3(-i, 0, 0), 0.2f, tunnelLayer)){
+                    if (Physics2D.OverlapCircle(transform.position + new Vector3(-i, 0, 0), 0.2f, tunnelLayer))
+                    {
                         Physics2D.OverlapCircle(transform.position + new Vector3(-i, 0, 0), 0.2f, tunnelLayer).GetComponent<Tunnel>().tunnel();
                     }
                     break;
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision){
         tunnel();
     }
