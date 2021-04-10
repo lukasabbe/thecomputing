@@ -65,7 +65,7 @@ public static class SaveGame
         }
         else
         {
-            Debug.LogError("save file not found in " + path);
+            Debug.Log("save file not found in " + path);
             return null;
         }
     }
