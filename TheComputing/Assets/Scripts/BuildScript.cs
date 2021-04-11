@@ -15,14 +15,13 @@ public class BuildScript : MonoBehaviour
     public int num_building_shadow = 0;
 
     public GameObject BuildMenu;
-
+    private GameObject gb = null;
     public LayerMask placedBuilding; //Buildings placed by the player
 
     //send to static gameManger
     public Text t;
     public bool isBuilderOn = false;
     public int buildDirection = 0;
-    private GameObject gb;
     //Equpied building
     [HideInInspector]
     public int building = 0;
@@ -41,11 +40,6 @@ public class BuildScript : MonoBehaviour
     void Update()
     {
         PlayerInputs();
-        if (Input.GetKeyDown("e"))
-        {
-            gb.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape)) onEsc();
     }
     void PlayerInputs()
     {
@@ -231,10 +225,17 @@ public class BuildScript : MonoBehaviour
         GameObject g = findBuildingGameObject("Refiner");
         if(g != null)
         {
-            //test so it works (this will be the menu but i havent started with it yet)
-            g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
             gb = g.gameObject.transform.GetChild(4).gameObject;
+            if (gb.activeSelf)
+            {
+                g.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            }
+            else
+            {
+                g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+            }
         }
+
     }
     void DropItem()
     {
