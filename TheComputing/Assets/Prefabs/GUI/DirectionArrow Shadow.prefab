@@ -253,12 +253,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8017215599126609270}
   m_Layer: 0
-  m_Name: DirectionArrow
+  m_Name: DirectionArrow Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8017215599126609270
 Transform:
   m_ObjectHideFlags: 0
