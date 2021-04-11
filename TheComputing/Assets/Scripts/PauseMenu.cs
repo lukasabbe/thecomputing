@@ -49,7 +49,6 @@ public class PauseMenu : MonoBehaviour
     }
     void onLoad()
     {
-        Debug.Log(saveMenu.activeSelf);
         if(saveMenu.activeSelf == true)
         {
             saveMenu.SetActive(false);

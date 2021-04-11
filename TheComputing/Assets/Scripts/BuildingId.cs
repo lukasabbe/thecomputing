@@ -6,4 +6,5 @@ public class BuildingId : MonoBehaviour
 {
     public int id;
     public int rot;
+    public int listpos;
 }

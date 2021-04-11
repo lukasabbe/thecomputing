@@ -2,25 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class BuildScript : MonoBehaviour
 {
     public GameObject[] buldings;
     public GameObject testItem; // Test item
     public GameObject[] directionArrow;
-    List<GameObject> ch_ShadowBuilding = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> ch_ShadowBuilding = new List<GameObject>();
+
     public int num_building_shadow = 0;
 
+    public GameObject BuildMenu;
 
     public LayerMask placedBuilding; //Buildings placed by the player
 
     //send to static gameManger
     public Text t;
-    private bool isBuilderOn = true;
+    public bool isBuilderOn = false;
     public int buildDirection = 0;
     private GameObject gb;
     //Equpied building
-    private int building = 0;
+    [HideInInspector]
+    public int building = 0;
 
     public GameObject escMenu;
     void Start()
@@ -31,17 +36,13 @@ public class BuildScript : MonoBehaviour
             ch_ShadowBuilding.Add(Instantiate(directionArrow[i]));
             if (i > 0) ch_ShadowBuilding[i].SetActive(false);
         }
+        
     }
     void Update()
     {
-        if (isBuilderOn)
+        PlayerInputs();
+        if (Input.GetKeyDown("e"))
         {
-            PlayerInputs();
-            DirectionArrow();
-        }
-        else if (Input.GetKeyDown("e") && isBuilderOn == false)
-        {
-            isBuilderOn = true;
             gb.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Escape)) onEsc();
@@ -49,38 +50,43 @@ public class BuildScript : MonoBehaviour
     void PlayerInputs()
     {
         // You can build if no object is in the tile
-        if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
+        //if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
+
+        if (isBuilderOn)
+        {
+            if (emptyTile() && Input.GetMouseButtonDown(0)) Build();
+            if (Input.GetMouseButtonDown(1)) Break();
+
+            //if (Input.GetKeyDown("t") && !Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(true);
+            //else if (Input.GetKeyDown("t") && Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(false);
+
+            // press r to rotate
+            if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
+            else if (Input.GetKeyDown("r")) buildDirection = 0;
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Scroll down
+            {
+                if (buildDirection < 3) buildDirection++;
+                else buildDirection = 0;
+            }
+            else if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Scroll up
+            {
+                if (buildDirection > 0) buildDirection--;
+                else buildDirection = 3;
+            }
+            DirectionArrow();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape)) onEsc();
 
-        if (Input.GetKeyDown("t") && !Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(true);
-        else if (Input.GetKeyDown("t") && Input.GetKey(KeyCode.LeftControl)) ChangeBuilding(false);
-
-        if (Input.GetMouseButtonDown(1)) Break();
+        if (Input.GetKeyDown(KeyCode.Tab)) isBuild();
 
         if (Input.GetKeyDown("q")) DropItem();
         //opem refiner (Test)
         if (Input.GetKeyDown("e")) RefinerOpen();
 
-        if (Input.GetKeyDown("o")) saveGame();
-
-        if (Input.GetKeyDown("l")) loadGame(0);
-
-        // press r to rotate
-        if (Input.GetKeyDown("r") && buildDirection < 3) buildDirection++;
-        else if (Input.GetKeyDown("r")) buildDirection = 0;
 
         // Scroll to rotate building direction
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Scroll down
-        {
-            if (buildDirection < 3) buildDirection++;
-            else buildDirection = 0;
-        }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Scroll up
-        {
-            if (buildDirection > 0) buildDirection--;
-            else buildDirection = 3;
-        }
+
         if (Input.GetKey("h") && Input.GetKey(KeyCode.LeftControl)) removeAllItems();
         if (Input.GetKey("h"))
         {
@@ -88,13 +94,30 @@ public class BuildScript : MonoBehaviour
             Destroy(g);
         }
     }
+
+    void isBuild()
+    {
+        if (!BuildMenu.activeSelf)
+        {
+            BuildMenu.SetActive(true);
+            isBuilderOn = true;
+        }
+        else
+        {
+            BuildMenu.SetActive(false);
+            isBuilderOn = false;
+        }
+    }
     void Build()//test
     {
-        GameObject build = Instantiate(buldings[building]);
-        Gamemanager.Buildings.Add(build);
-        build.transform.position = buildPosition();
-        build.GetComponent<BuildingId>().rot = buildDirection;
-        build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            GameObject build = Instantiate(buldings[building]);
+            Gamemanager.Buildings.Add(build);
+            build.transform.position = buildPosition();
+            build.GetComponent<BuildingId>().rot = buildDirection;
+            build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
+        }
     }
     void Break()
     {
@@ -118,6 +141,7 @@ public class BuildScript : MonoBehaviour
     {
         if (escMenu.activeSelf)
         {
+            escMenu.transform.GetChild(1).gameObject.SetActive(false);
             escMenu.SetActive(false);
             isBuilderOn = true;
         }
@@ -171,7 +195,7 @@ public class BuildScript : MonoBehaviour
         ch_ShadowBuilding[num_building_shadow].transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
     }
     //Looks for gamesObj in a radius of mouse
-    GameObject findBuildingGameObject(string tag)
+    public GameObject findBuildingGameObject(string tag)
     {
         Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
         GameObject g = null;
@@ -208,7 +232,6 @@ public class BuildScript : MonoBehaviour
         if(g != null)
         {
             //test so it works (this will be the menu but i havent started with it yet)
-            isBuilderOn = false;
             g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
             gb = g.gameObject.transform.GetChild(4).gameObject;
         }
