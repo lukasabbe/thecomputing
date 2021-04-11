@@ -49,7 +49,7 @@ public class CorsorInfo : MonoBehaviour
         if (itemName != null)
         {
             text.SetActive(true);
-            text.GetComponent<RectTransform>().position = new Vector2(buildScript.cursorPosition().x * 48 + 515, buildScript.cursorPosition().y * 48 + 245);
+            text.GetComponent<RectTransform>().position = new Vector2((buildScript.cursorPosition().x - transform.position.x) * 48 + 515, (buildScript.cursorPosition().y - transform.position.y) * 48 + 245);
             text.GetComponent<UnityEngine.UI.Text>().text = itemName;
         }
     }
