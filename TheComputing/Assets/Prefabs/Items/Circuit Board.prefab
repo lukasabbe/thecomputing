@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 519165310641464189}
   - component: {fileID: -4098305560244657924}
   - component: {fileID: -7315024117328795344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circuit Board
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3582236, g: 0.6603774, b: 0.37471557, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 9
   ItemName: Circuit Board
   SellPrice: 8
+  refinsTo: 
 --- !u!61 &519165310641464189
 BoxCollider2D:
   m_ObjectHideFlags: 0

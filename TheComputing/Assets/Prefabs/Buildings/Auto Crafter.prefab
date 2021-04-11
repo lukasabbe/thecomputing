@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &40830542213079295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802475184597084846}
+  m_Layer: 8
+  m_Name: Left Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802475184597084846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40830542213079295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7745998387802206304}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &81518307894131624
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +111,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1484797103815420501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3013596235489503287}
+  m_Layer: 8
+  m_Name: Right Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3013596235489503287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484797103815420501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.4, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7745998387802206304}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518925576468573579
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +751,7 @@ GameObject:
   - component: {fileID: 4242401740002089998}
   - component: {fileID: 7745998387802206310}
   - component: {fileID: 7745998387802206309}
+  - component: {fileID: 3044165726447429375}
   m_Layer: 8
   m_Name: Auto Crafter
   m_TagString: Building
@@ -719,6 +780,8 @@ Transform:
   - {fileID: 2911726839789378250}
   - {fileID: 5577591489477729496}
   - {fileID: 576932127013626524}
+  - {fileID: 802475184597084846}
+  - {fileID: 3013596235489503287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -734,8 +797,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb4775493e4bc9498baeac77ee839df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outputItem: {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}
   dropLocation: {fileID: 3725573233197679515}
+  leftInput: {fileID: 40830542213079295}
+  rightInput: {fileID: 1484797103815420501}
+  outputItems:
+  - {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}
+  - {fileID: 1379586487719897555, guid: 59b4b7d1f85b6b1428e22e0564d9921a, type: 3}
+  - {fileID: 6432684113606157756, guid: d362a308e9b98394aaaf10dd64776d7c, type: 3}
 --- !u!114 &4242401740002089998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,7 +842,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
 --- !u!50 &7745998387802206309
 Rigidbody2D:
@@ -797,6 +865,20 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &3044165726447429375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745998387802206308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  rot: 0
 --- !u!1 &7745998387990094505
 GameObject:
   m_ObjectHideFlags: 0

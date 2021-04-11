@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public static class Gamemanager
 {
-    public static int Money = 0;
-    public static Text t;
-    public static void uppdateText()
-    {
-        t.text = "Money: " + Money;
+    public static int money = 0, income = 0;
+    public static Text moneyText;
+    public static List<GameObject> Buildings = new List<GameObject>();
+
+    public static void uppdateText(){
+        moneyText.text = "Money: " + money + "\n" + "Income per minute " + income;
     }
 }

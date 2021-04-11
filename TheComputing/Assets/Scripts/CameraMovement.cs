@@ -9,10 +9,12 @@ public class CameraMovement : MonoBehaviour
     // Slows camera movement over time
     public float friction = 8;
     Rigidbody2D rb;
+    Camera cam;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        cam = GetComponent<Camera>();
     }
     void Update()
     {
@@ -36,17 +38,22 @@ public class CameraMovement : MonoBehaviour
     }
     void Zoom()
     {
-        Camera cam = GetComponent<Camera>();
 
         // Scrolling to zoom in/out
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f) // Scroll down
+        if (Input.GetAxis("Mouse ScrollWheel") < 0f && Input.GetKey(KeyCode.LeftControl)) // Scroll down
         {
             //     Jag tror pixel perfect camera skapar problem när man vill zooma ut/in, inte säker på hur man fixar det.
-
-            //cam.orthographicSize = 10;
+            if(cam.orthographicSize < 27)
+            {
+                cam.orthographicSize++;
+            }
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") > 0f) // Scroll up
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0f && Input.GetKey(KeyCode.LeftControl)) // Scroll up
         {
+            if (cam.orthographicSize > 3)
+            {
+                cam.orthographicSize--;
+            }
         }
     }
 }

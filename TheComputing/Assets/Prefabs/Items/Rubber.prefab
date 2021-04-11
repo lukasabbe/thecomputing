@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2468889247269551920}
   - component: {fileID: -1762250572296312919}
   - component: {fileID: 5717539615761791912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rubber
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   id: 7
   ItemName: Rubber
   SellPrice: 2
+  refinsTo: 
 --- !u!61 &2468889247269551920
 BoxCollider2D:
   m_ObjectHideFlags: 0

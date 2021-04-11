@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 695973548442162670}
   - component: {fileID: 6356762535250016646}
   - component: {fileID: 6356762535250016645}
+  - component: {fileID: 8876552597270173875}
   m_Layer: 8
   m_Name: Plastic Grabber
   m_TagString: Building
@@ -391,6 +392,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &8876552597270173875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356762535250016644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
 --- !u!1 &6356762535282833050
 GameObject:
   m_ObjectHideFlags: 0
