@@ -171,7 +171,7 @@ public class BuildScript : MonoBehaviour
         ch_ShadowBuilding[num_building_shadow].transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
     }
     //Looks for gamesObj in a radius of mouse
-    GameObject findBuildingGameObject(string tag)
+    public GameObject findBuildingGameObject(string tag)
     {
         Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
         GameObject g = null;
