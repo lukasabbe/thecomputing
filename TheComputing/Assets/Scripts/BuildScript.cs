@@ -14,6 +14,8 @@ public class BuildScript : MonoBehaviour
 
     public int num_building_shadow = 0;
 
+    public bool freeBuildings;
+
     public GameObject BuildMenu;
     private GameObject gb = null;
     public LayerMask placedBuilding; //Buildings placed by the player
@@ -35,7 +37,7 @@ public class BuildScript : MonoBehaviour
             ch_ShadowBuilding.Add(Instantiate(directionArrow[i]));
             if (i > 0) ch_ShadowBuilding[i].SetActive(false);
         }
-        
+        Gamemanager.uppdateText();
     }
     void Update()
     {
@@ -106,11 +108,16 @@ public class BuildScript : MonoBehaviour
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            GameObject build = Instantiate(buldings[building]);
-            Gamemanager.Buildings.Add(build);
-            build.transform.position = buildPosition();
-            build.GetComponent<BuildingId>().rot = buildDirection;
-            build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
+            if( buldings[building].GetComponent<BuildingId>().cost <= Gamemanager.money || freeBuildings)
+            {
+                if(!freeBuildings) Gamemanager.money -= buldings[building].GetComponent<BuildingId>().cost;
+                Gamemanager.uppdateText();
+                GameObject build = Instantiate(buldings[building]);
+                Gamemanager.Buildings.Add(build);
+                build.transform.position = buildPosition();
+                build.GetComponent<BuildingId>().rot = buildDirection;
+                build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
+            }
         }
     }
     void Break()

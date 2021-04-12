@@ -818,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildScript: {fileID: 0}
   direction: 0
+  rotationSpawnd: 0
 --- !u!61 &7745998387802206310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -879,6 +880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   rot: 0
+  listpos: 0
+  cost: 100
 --- !u!1 &7745998387990094505
 GameObject:
   m_ObjectHideFlags: 0

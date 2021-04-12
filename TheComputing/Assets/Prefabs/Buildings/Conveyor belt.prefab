@@ -441,3 +441,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  rot: 0
+  listpos: 0
+  cost: 2

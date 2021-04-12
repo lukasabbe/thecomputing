@@ -580,6 +580,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   rot: 0
+  listpos: 0
+  cost: 20
 --- !u!1 &8299061992599947577
 GameObject:
   m_ObjectHideFlags: 0
