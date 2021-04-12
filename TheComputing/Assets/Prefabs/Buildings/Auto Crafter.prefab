@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 4242401740002089998}
   - component: {fileID: 7745998387802206310}
   - component: {fileID: 7745998387802206309}
-  - component: {fileID: 3044165726447429375}
+  - component: {fileID: -2723108382109552421}
   m_Layer: 8
   m_Name: Auto Crafter
   m_TagString: Building
@@ -867,7 +867,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &3044165726447429375
+--- !u!114 &-2723108382109552421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 5
   rot: 0
   listpos: 0
 --- !u!1 &7745998387990094505
