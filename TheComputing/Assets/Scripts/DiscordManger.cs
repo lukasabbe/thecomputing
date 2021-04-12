@@ -48,7 +48,7 @@ public class DiscordManger : MonoBehaviour
         {
             if (res == Discord.Result.Ok)
             {
-                Debug.Log("uppdate ac");
+                //Debug.Log("uppdate ac");
             }
         });
         StartCoroutine(waitUp());

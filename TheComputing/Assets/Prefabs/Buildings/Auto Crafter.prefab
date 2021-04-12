@@ -797,13 +797,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb4775493e4bc9498baeac77ee839df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropLocation: {fileID: 3725573233197679515}
-  leftInput: {fileID: 40830542213079295}
-  rightInput: {fileID: 1484797103815420501}
-  outputItems:
-  - {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}
-  - {fileID: 1379586487719897555, guid: 59b4b7d1f85b6b1428e22e0564d9921a, type: 3}
-  - {fileID: 6432684113606157756, guid: d362a308e9b98394aaaf10dd64776d7c, type: 3}
+  itemLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  recipieObj:
+  - {fileID: 11400000, guid: 17a58699ffa871540b19306cfb11406a, type: 2}
+  - {fileID: 11400000, guid: 84e7b67280a73f747bb0e507af43e47f, type: 2}
+  - {fileID: 11400000, guid: e0c705093ee99cc41b3d41610fa6f3b2, type: 2}
+  selectedRecipeIndex: 0
 --- !u!114 &4242401740002089998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildScript: {fileID: 0}
   direction: 0
+  rotationSpawnd: 0
 --- !u!61 &7745998387802206310
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -879,6 +881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   rot: 0
+  listpos: 0
 --- !u!1 &7745998387990094505
 GameObject:
   m_ObjectHideFlags: 0
