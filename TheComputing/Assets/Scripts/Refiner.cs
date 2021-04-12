@@ -96,6 +96,14 @@ public class Refiner : MonoBehaviour
         {
             return 11;
         }
+        if (pos == 4)//trash copper
+        {
+            return 4;
+        }
+        if (pos == 5)//trash iron
+        {
+            return 6;
+        }
         return 100;
     }
     IEnumerator timer(int waitTime, Collider2D collision, Item i)
