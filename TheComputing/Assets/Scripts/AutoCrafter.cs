@@ -10,27 +10,52 @@ public class AutoCrafter : MonoBehaviour
 
     ScrapMetal      : 0
     TrashPlastic    : 1
+
     Plastic         : 2
     Polymer         : 3
     TrashCopper     : 4
     TrashGold       : 5
     TrashIron       : 6
     TrashSilver     : 7
+
     Copper          : 8
     Gold            : 9
     Iron            : 10
     Rubber          : 11
     Silver          : 12
-    Cables          : 13
-    Case            : 14
-    CircuitBoard    : 15
-    CPU             : 16
-    GPU             : 17
-    Harddrive       : 18
-    Motherboard     : 19
-    PSU             : 20
-    RAM             : 21
-    SSD             : 22
+
+    Low quality Cables           : 13
+    Low quality Case             : 14
+    Low quality CircuitBoard     : 15
+    Low quality CPU              : 16
+    Low quality GPU              : 17
+    Low quality Harddrive        : 18
+    Low quality Motherboard      : 19
+    Low quality PSU              : 20
+    Low quality RAM              : 21
+    Low quality SSD              : 22
+
+    Cables                       : 23
+    Case                         : 24
+    CircuitBoard                 : 25
+    CPU                          : 26
+    GPU                          : 27
+    Harddrive                    : 28
+    Motherboard                  : 29
+    PSU                          : 30
+    RAM                          : 31
+    SSD                          : 32
+
+    High quality Cables          : 33
+    High quality Case            : 34
+    High quality CircuitBoard    : 35
+    High quality CPU             : 36
+    High quality GPU             : 37
+    High quality Harddrive       : 38
+    High quality Motherboard     : 39
+    High quality PSU             : 40
+    High quality RAM             : 41
+    High quality SSD             : 42
 
     ----------Item ids---------- 
 
