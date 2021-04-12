@@ -242,6 +242,13 @@ public class BuildScript : MonoBehaviour
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
             }
         }
+        else if(gb != null)
+        {
+            if (gb.activeSelf)
+            {
+                gb.SetActive(false);
+            }
+        }
 
     }
     void DropItem()
