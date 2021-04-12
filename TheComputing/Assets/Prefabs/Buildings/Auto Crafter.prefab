@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 4242401740002089998}
   - component: {fileID: 7745998387802206310}
   - component: {fileID: 7745998387802206309}
-  - component: {fileID: -2723108382109552421}
+  - component: {fileID: 3044165726447429375}
   m_Layer: 8
   m_Name: Auto Crafter
   m_TagString: Building
@@ -803,8 +803,7 @@ MonoBehaviour:
   recipieObj:
   - {fileID: 11400000, guid: 17a58699ffa871540b19306cfb11406a, type: 2}
   - {fileID: 11400000, guid: 84e7b67280a73f747bb0e507af43e47f, type: 2}
-  - {fileID: 11400000, guid: e0c705093ee99cc41b3d41610fa6f3b2, type: 2}
-  selectedRecipeIndex: 0
+  selectedRecipeIndex: 1
 --- !u!114 &4242401740002089998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,7 +866,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-2723108382109552421
+--- !u!114 &3044165726447429375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -879,9 +878,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65deed7eab1c61e43b84615ab290278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 5
+  id: 2
   rot: 0
   listpos: 0
+  cost: 100
 --- !u!1 &7745998387990094505
 GameObject:
   m_ObjectHideFlags: 0
