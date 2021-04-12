@@ -9,18 +9,22 @@ public class FilterScript : MonoBehaviour
     public int filterID = 0; // The id of the item(s) that should be filtered out
     public int dropSide = 0; // if 0, it will filter out to the left side, 1 to the right
 
-    // Update is called once per frame
     void Update()
     {
-        
-    }/*
-    public void OnTriggerStay2D(Collider2D col)
+        Filter();
+    }
+    private void Filter()
     {
-        if (col.gameObject.tag == "Item" && col.gameObject.GetComponent<Item>() != null) // When an item rolls over the filter
+        Collider2D[] checkItems = Physics2D.OverlapBoxAll(transform.position, new Vector2(0.05f, 0.05f), 0); // Looks at all the items on top of the building
+
+        foreach (Collider2D item in checkItems)
         {
-            if (col.gameObject.GetComponent<Item>().id == filterID) // If its the right item
+            if (item.gameObject.tag == "Item")
             {
-                col.gameObject.transform.position = dropLocation[dropSide].transform.position;
+                if (item.gameObject.GetComponent<Item>().id == filterID && EmptyInFront()) // If its the right item
+                {
+                    item.gameObject.transform.position = dropLocation[dropSide].transform.position; // Move it to the left/right side
+                }
             }
         }
     }
@@ -37,5 +41,5 @@ public class FilterScript : MonoBehaviour
             }
         }
         return true;
-    }*/
+    }
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599466239961277276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1001155045930009499}
@@ -331,7 +331,7 @@ MonoBehaviour:
   dropLocation:
   - {fileID: 3070789774026302476}
   - {fileID: 599466239961277276}
-  filterID: 
+  filterID: 0
   dropSide: 0
 --- !u!61 &1001155045930009476
 BoxCollider2D:
@@ -414,6 +414,7 @@ MonoBehaviour:
   id: 7
   rot: 0
   listpos: 0
+  cost: 0
 --- !u!1 &1001155046241914768
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3070789774026302476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1001155045930009499}
