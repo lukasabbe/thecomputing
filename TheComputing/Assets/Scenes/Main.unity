@@ -620,8 +620,12 @@ PrefabInstance:
       objectReference: {fileID: 2006824830}
     - target: {fileID: 1754199099155245706, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
       propertyPath: freeBuildings
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1754199099155245706, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
+      propertyPath: buldings.Array.data[5]
+      value: 
+      objectReference: {fileID: 7745998387802206308, guid: 6839bc7ef70977b47ba7e0d0830a9c6f, type: 3}
     - target: {fileID: 1754199099155245706, guid: ed8718f32f39bd943bb53f4f5637bdfc, type: 3}
       propertyPath: directionArrow.Array.data[3]
       value: 

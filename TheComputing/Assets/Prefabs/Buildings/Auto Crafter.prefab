@@ -803,7 +803,7 @@ MonoBehaviour:
   recipieObj:
   - {fileID: 11400000, guid: 17a58699ffa871540b19306cfb11406a, type: 2}
   - {fileID: 11400000, guid: 84e7b67280a73f747bb0e507af43e47f, type: 2}
-  selectedRecipeIndex: 1
+  selectedRecipeIndex: 0
 --- !u!114 &4242401740002089998
 MonoBehaviour:
   m_ObjectHideFlags: 0
