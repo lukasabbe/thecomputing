@@ -16,11 +16,11 @@ public class DiscordManger : MonoBehaviour
         am.ClearActivity(result => {
             if (result == Discord.Result.Ok)
             {
-                Debug.Log("Cleard");
+                Debug.Log("Cleared");
             }
             else
             {
-                Debug.Log("faild");
+                Debug.Log("failed");
             }
         });
         discord.Dispose();

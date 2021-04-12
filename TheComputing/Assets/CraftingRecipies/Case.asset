@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6e075078f3a59408cec5239555a18b, type: 3}
-  m_Name: CircuitBoard
+  m_Name: Case
   m_EditorClassIdentifier: 
-  itemIds: 0200000009000000
-  itemAmounts: 0100000001000000
-  item: {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}
+  itemIds: 020000000a000000
+  itemAmounts: 0400000004000000
+  item: {fileID: 2259423859467319726, guid: 93960a728e245cf46ab720526b3994c3, type: 3}

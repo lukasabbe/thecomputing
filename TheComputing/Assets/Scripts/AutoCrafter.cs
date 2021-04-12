@@ -6,18 +6,31 @@ public class AutoCrafter : MonoBehaviour
 {
     /*
 
-    ----------Item ids---------- 
+    ----------Item ids----------
 
-    ScrapMetal   : 0
-    Gold         : 1
-    Silver       : 2
-    Iron         : 3
-    Copper       : 4
-    Plastic      : 5
-    Polymer      : 6
-    Rubber       : 7
-    TrashPlastic : 8
-    CircuitBoard : 9
+    ScrapMetal      : 0
+    TrashPlastic    : 1
+    Plastic         : 2
+    Polymer         : 3
+    TrashCopper     : 4
+    TrashGold       : 5
+    TrashIron       : 6
+    TrashSilver     : 7
+    Copper          : 8
+    Gold            : 9
+    Iron            : 10
+    Rubber          : 11
+    Silver          : 12
+    Cables          : 13
+    Case            : 14
+    CircuitBoard    : 15
+    CPU             : 16
+    GPU             : 17
+    Harddrive       : 18
+    Motherboard     : 19
+    PSU             : 20
+    RAM             : 21
+    SSD             : 22
 
     ----------Item ids---------- 
 
@@ -29,8 +42,8 @@ public class AutoCrafter : MonoBehaviour
     Vector3 input1, input2, output;
     const int Up = 0, Down = 2, Right = 1, Left = 3;
 
-    List<slot> slots = new List<slot>(4);
-    List<recipie> recipies = new List<recipie>();
+    public List<slot> slots = new List<slot>(4);
+    public List<recipie> recipies = new List<recipie>();
 
     List<GameObject> itemsCrafted = new List<GameObject>();
 
@@ -110,6 +123,7 @@ public class AutoCrafter : MonoBehaviour
             itemsCrafted.RemoveAt(itemsCrafted.Count - 1);
         }
     }
+
     public void addItemToSlot(GameObject item){
         if(item != null){
             bool hasBeenAdded = false;
@@ -119,7 +133,7 @@ public class AutoCrafter : MonoBehaviour
                         hasBeenAdded = true;
                         slots[i].item = item;
                         slots[i].itemsInStack++;
-                        item.SetActive(false);
+                        Destroy(item);
                     }
                 }
             }
@@ -129,9 +143,8 @@ public class AutoCrafter : MonoBehaviour
                         hasBeenAdded = true;
                         slots[i].item = item;
                         slots[i].itemsInStack++;
-                        item.SetActive(false);
+                        Destroy(item);
                     }
-
             if (slots[0].item != null && slots[1].item != null) tryToCraft();
         }
     }
@@ -143,7 +156,7 @@ public class AutoCrafter : MonoBehaviour
             for(int i1 = 0; i1 < slots.Count; i1++){ //Loopar igenom alla crafterns slotts 
                 if(slots[i1].item != null){ //Kollar så att slottens item inte är null
                     if (recipies[selectedRecipeIndex].itemIds[i] == slots[i1].item.GetComponent<Item>().id && recipies[selectedRecipeIndex].itemAmounts[i] <= slots[i1].itemsInStack){ //Kollar om recipies item matchar slottens item och mängd
-                        hasItemsOnSlot[i] = true; 
+                        hasItemsOnSlot[i] = true;
                     }
                 }
             }
@@ -183,7 +196,7 @@ public class AutoCrafter : MonoBehaviour
             Debug.Log("slot1: " + slots[0].itemsInStack + ":" + slots[0].item);
         }
     }
-    class slot
+    public class slot
     {
         public int itemsInStack = 0;
         public GameObject item = null;

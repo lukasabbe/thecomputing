@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e6e075078f3a59408cec5239555a18b, type: 3}
-  m_Name: CircuitBoard
+  m_Name: RAM
   m_EditorClassIdentifier: 
-  itemIds: 0200000009000000
-  itemAmounts: 0100000001000000
-  item: {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}
+  itemIds: 08000000020000000f000000
+  itemAmounts: 020000000100000001000000
+  item: {fileID: 7538619873633832180, guid: 945d293cf12db0d4691930505b04ee9a, type: 3}

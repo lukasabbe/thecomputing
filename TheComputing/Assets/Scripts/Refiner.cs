@@ -61,19 +61,19 @@ public class Refiner : MonoBehaviour
     {
         if(pos == 0)//gold
         {
-            return 1;
+            return 9;
         }
         if (pos == 1)//silver
         {
-            return 2;
+            return 12;
         }
         if (pos == 2)//plastic
         {
-            return 5;
+            return 2;
         }
         if (pos == 3)//rubber
         {
-            return 7;
+            return 11;
         }
         return 100;
     }
