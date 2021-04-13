@@ -6,15 +6,33 @@ public class TrashGrabber : MonoBehaviour
 {
     public GameObject dropLocation, trashItem;
     float dropCooldown = 0; // Cooldown in seconds.
-    public int speedLVL = 0;
 
     const int Up = 0, Down = 2, Right = 1, Left = 3;
+
+    // Lvls, price and default price for upgrading
+    public int speedLVL = 0;
+    public int defaultUpgradePrice, upgradePrice;
+
+    public GameObject buyMenu;
+    public GameObject buyPrice, lvl;
+
     void Start()
     {
-
+        upgradePrice = defaultUpgradePrice + (speedLVL * 20);
+        lvl.GetComponent<UnityEngine.UI.Text>().text = speedLVL.ToString();
+        buyPrice.GetComponent<UnityEngine.UI.Text>().text = upgradePrice.ToString();
     }
     void Update()
     {
+        // Tries to open buy menu
+        if (Input.GetKeyDown("e"))
+        {
+            bool menu = false;
+            if (buyMenu.active) menu = true;
+            Interact(); // Calls the interact void
+            if (menu) buyMenu.SetActive(false);
+        }
+
         
     }
     public void OnTriggerStay2D(Collider2D col)
@@ -46,5 +64,14 @@ public class TrashGrabber : MonoBehaviour
             }
         }
         return true;
+    }
+    void Interact() // Open buy menu
+    {
+        Vector2 buildPosition = Camera.main.GetComponent<BuildScript>().buildPosition();
+        if (new Vector2(transform.position.x, transform.position.y) == buildPosition) // When cursor is over building
+        {
+            if (!buyMenu.active) buyMenu.SetActive(true);
+            //if (Gamemanager.money == upgradePrice) speedLVL++;
+        }
     }
 }
