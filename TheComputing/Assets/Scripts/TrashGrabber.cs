@@ -28,7 +28,7 @@ public class TrashGrabber : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             bool menu = false;
-            if (buyMenu.active) menu = true;
+            if (buyMenu.activeSelf) menu = true;
             Interact(); // Calls the interact void
             if (menu) buyMenu.SetActive(false);
         }
