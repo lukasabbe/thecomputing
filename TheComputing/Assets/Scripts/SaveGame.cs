@@ -10,13 +10,16 @@ public static class SaveGame
     {
         if(slot >= 0)
         {
+            //creates a formater 
             BinaryFormatter formater = new BinaryFormatter();
             string path = Application.persistentDataPath + "/mapData"+slot+".TheComputing";
             FileStream strem = new FileStream(path, FileMode.Create);
+            //creats all arrays for saving. 
             float[] pos = new float[Gamemanager.Buildings.Count * 3];
             int[] id = new int[Gamemanager.Buildings.Count];
             int[] rot = new int[Gamemanager.Buildings.Count];
             bool[] opt = new bool[Gamemanager.Buildings.Count];
+            //Class that saves refiners data
             refinerData[] Rdata = new refinerData[Gamemanager.Buildings.Count];
             //Debug.Log("Yes1 " + Gamemanager.Buildings.Count +" "+ pos.Length);
             //0 1 2: 0 + 3: 3 4 5

@@ -5,16 +5,37 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Refiner : MonoBehaviour
 {
-    //list of matiral
-    //*0 = gold
-    //*1 = silver
-    //*3 = plastic
-    //*4 = rubber
-    //ID list
-    //*1 = gold
-    //*2 = silver
-    //*5 = platic
-    //*7 = rubber
+    /*
+
+    ----------Item ids----------
+
+    ScrapMetal      : 0
+    TrashPlastic    : 1
+    Plastic         : 2
+    Polymer         : 3
+    TrashCopper     : 4
+    TrashGold       : 5
+    TrashIron       : 6
+    TrashSilver     : 7
+    Copper          : 8
+    Gold            : 9
+    Iron            : 10
+    Rubber          : 11
+    Silver          : 12
+    Cables          : 13
+    Case            : 14
+    CircuitBoard    : 15
+    CPU             : 16
+    GPU             : 17
+    Harddrive       : 18
+    Motherboard     : 19
+    PSU             : 20
+    RAM             : 21
+    SSD             : 22
+
+    ----------Item ids---------- 
+
+    */
 
     public List<Button> RefinerButtonItem = new List<Button>();
     //The chosen id in UI of game
@@ -59,21 +80,29 @@ public class Refiner : MonoBehaviour
     }
     int findId(int pos)
     {
-        if(pos == 0)//gold
-        {
-            return 1;
-        }
-        if (pos == 1)//silver
-        {
-            return 2;
-        }
-        if (pos == 2)//plastic
+        if(pos == 0)//trach gold
         {
             return 5;
         }
-        if (pos == 3)//rubber
+        if (pos == 1)//trach silver
         {
             return 7;
+        }
+        if (pos == 2)//plastic
+        {
+            return 2;
+        }
+        if (pos == 3)//rubber
+        {
+            return 11;
+        }
+        if (pos == 4)//trash copper
+        {
+            return 4;
+        }
+        if (pos == 5)//trash iron
+        {
+            return 6;
         }
         return 100;
     }

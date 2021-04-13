@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public static class Gamemanager
 {
-    public static int money = 0, income = 0;
+    public static int money = 200, income = 0;
     public static Text moneyText;
     public static List<GameObject> Buildings = new List<GameObject>();
 
