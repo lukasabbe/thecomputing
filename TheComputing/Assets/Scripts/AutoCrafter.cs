@@ -62,6 +62,7 @@ public class AutoCrafter : MonoBehaviour
     */
 
     BuildScript buildScript;
+    AutoCrafterUI ui;
     public LayerMask itemLayer;
 
     Vector3 input1, input2, output;
@@ -70,18 +71,21 @@ public class AutoCrafter : MonoBehaviour
     public List<slot> slots = new List<slot>(4);
     public List<recipie> recipies = new List<recipie>();
 
-    List<GameObject> itemsCrafted = new List<GameObject>();
+    public int selectedRecipeIndex = 0;
+
+    public List<GameObject> itemsCrafted = new List<GameObject>();
 
     public RecipieManager[] recipieObj;
+
+    public float craftTime = 1f;
+    const float craftTimeReset = 1f;
 
     slot emptySlot0 = new slot();
     slot emptySlot1 = new slot();
     slot emptySlot2 = new slot();
     slot emptySlot3 = new slot();
-
-    public int selectedRecipeIndex;
-    private void Start()
-    {
+    private void Start(){
+        ui = GetComponent<AutoCrafterUI>();
         buildScript = Camera.main.GetComponent<BuildScript>();
 
         switch (buildScript.buildDirection)
@@ -126,39 +130,41 @@ public class AutoCrafter : MonoBehaviour
                 Debug.LogError("Trying to add recipie with arrays of different sizes. Make sure the 'ItemId' and 'ItemAmount' arrays have the same length.");
             }
         }
-        for(int i = 0; i < recipies.Count; i++)
-        {
-            Debug.Log("recipes " + i + ":" + recipies[i].item);
-        }
     }
 
     private void Update(){
         float itemCheckRadius = 0.05f;
         if (Physics2D.OverlapCircle(input1, itemCheckRadius, itemLayer)){
+            Debug.Log("INPUT1 picked up an item");
             GameObject itemToAdd = Physics2D.OverlapCircle(input1, itemCheckRadius, itemLayer).gameObject;
             addItemToSlot(itemToAdd);
         }
         if(Physics2D.OverlapCircle(input2, itemCheckRadius, itemLayer)){
+            Debug.Log("INPUT2 picked up an item");
             GameObject itemToAdd = Physics2D.OverlapCircle(input2, itemCheckRadius, itemLayer).gameObject;
             addItemToSlot(itemToAdd);
         }
 
-        if(itemsCrafted.Count > 0 && !Physics2D.OverlapCircle(output, 0.4f, itemLayer)){
+        if (craftTime > 0) craftTime -= Time.deltaTime;
+        if(itemsCrafted.Count > 0 && !Physics2D.OverlapCircle(output, 0.4f, itemLayer) && craftTime <= 0){
+            craftTime = craftTimeReset;
             Instantiate(itemsCrafted[itemsCrafted.Count - 1], output, Quaternion.identity);
             itemsCrafted.RemoveAt(itemsCrafted.Count - 1);
         }
     }
 
     public void addItemToSlot(GameObject item){
+        Debug.Log("Trying to add " + item.GetComponent<Item>().ItemName);
         if(item != null){
             bool hasBeenAdded = false;
             for (int i = 0; i < slots.Count; i++){
                 if(slots[i].item != null){ //kollar om slotten är tom
                     if (slots[i].item.GetComponent<Item>().id == item.GetComponent<Item>().id && !hasBeenAdded){ //lägger till items i stacken om itemet som tas upp matchar itemet i slotten
                         hasBeenAdded = true;
-                        slots[i].item = item;
                         slots[i].itemsInStack++;
-                        Destroy(item);
+                        ui.UpdateUI();
+                        Debug.Log("item: " + item.GetComponent<Item>().ItemName + " id: " + item.GetComponent<Item>().id);
+                        item.SetActive(false);
                     }
                 }
             }
@@ -168,19 +174,22 @@ public class AutoCrafter : MonoBehaviour
                         hasBeenAdded = true;
                         slots[i].item = item;
                         slots[i].itemsInStack++;
-                        Destroy(item);
+                        ui.UpdateUI();
+                        Debug.Log("item: " + item.GetComponent<Item>().ItemName + "id: " + item.GetComponent<Item>().id);
+                        item.SetActive(false);
                     }
             if (slots[0].item != null && slots[1].item != null) tryToCraft();
         }
     }
+    List<GameObject> itemsToDelete = new List<GameObject>();
     public void tryToCraft(){
         Debug.Log("TRYING TO CRAFT");
-
         bool[] hasItemsOnSlot = new bool[] { false, false, false, false }; //Varje crafting slot har en check som skapas här
         for(int i = 0; i < recipies[selectedRecipeIndex].uniqueItems; i++){ //Loopar igenom alla recipies
             for(int i1 = 0; i1 < slots.Count; i1++){ //Loopar igenom alla crafterns slotts 
                 if(slots[i1].item != null){ //Kollar så att slottens item inte är null
                     if (recipies[selectedRecipeIndex].itemIds[i] == slots[i1].item.GetComponent<Item>().id && recipies[selectedRecipeIndex].itemAmounts[i] <= slots[i1].itemsInStack){ //Kollar om recipies item matchar slottens item och mängd
+                        Debug.Log("slot" + (i1 + 1) + ": " + slots[i1].item);
                         hasItemsOnSlot[i] = true;
                     }
                 }
@@ -197,6 +206,7 @@ public class AutoCrafter : MonoBehaviour
                     if(slots[i1].item != null){
                         if (recipies[selectedRecipeIndex].itemIds[i] == slots[i1].item.GetComponent<Item>().id){ //hittar itemsen som användes i recipien
                             slots[i1].itemsInStack -= recipies[selectedRecipeIndex].itemAmounts[i]; //Tar bort itemsen som användes i crafting recipien
+                            itemsToDelete.Add(slots[i1].item);
                             if (slots[i1].itemsInStack <= 0){
                                 switch (i1){ //emptyar slotten om den inte har några items i sig
                                     case (0):
@@ -217,9 +227,30 @@ public class AutoCrafter : MonoBehaviour
                     }
                 }
             }
-            itemsCrafted.Add(recipies[selectedRecipeIndex].item); //lägger till itemet som craftade i en lista 
-            Debug.Log("slot1: " + slots[0].itemsInStack + ":" + slots[0].item);
+            for (int i = 0; i < recipieObj[selectedRecipeIndex].itemsCraftedPerTime; i++)
+                itemsCrafted.Add(recipies[selectedRecipeIndex].item); //lägger till itemet som craftade i en lista
+
+            for (int i = 0; i < itemsToDelete.Count; i++) // loopar igenom alla items som användes i craftingen och tar bort dem
+                Destroy(itemsToDelete[i]);
+            itemsToDelete.Clear();
+
+            ui.UpdateUI();
         }
+    }
+    public void SetCraftingIndex(int index){
+        Debug.Log("Index changed: " + index);
+
+        itemsCrafted.Clear();
+        slots.Clear();
+
+        slots.Add(emptySlot0);
+        slots.Add(emptySlot1);
+        slots.Add(emptySlot2);
+        slots.Add(emptySlot3);
+
+        ui.UpdateUI();
+
+        selectedRecipeIndex = index;
     }
     public class slot
     {

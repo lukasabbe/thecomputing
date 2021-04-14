@@ -27,7 +27,7 @@ public class Splitter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GameObject target = buildScript.findBuildingGameObject("Building");
+            GameObject target = buildScript.findBuildingGameObject(0, "Building");
             if (target.GetComponent<Splitter>() != null)
             {
                 splitDirection *= -1;

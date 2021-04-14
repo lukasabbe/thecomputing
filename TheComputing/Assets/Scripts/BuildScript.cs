@@ -83,7 +83,11 @@ public class BuildScript : MonoBehaviour
 
         if (Input.GetKeyDown("q")) DropItem();
         //opem refiner (Test)
-        if (Input.GetKeyDown("e")) RefinerOpen();
+        if (Input.GetKeyDown("e"))
+        {
+            RefinerOpen();
+            AssemblerOpen();
+        }
 
 
         // Scroll to rotate building direction
@@ -91,7 +95,7 @@ public class BuildScript : MonoBehaviour
         if (Input.GetKey("h") && Input.GetKey(KeyCode.LeftControl)) removeAllItems();
         if (Input.GetKey("h"))
         {
-            GameObject g = findBuildingGameObject("Item");
+            GameObject g = findBuildingGameObject(0,"Item");
             Destroy(g);
         }
     }
@@ -150,12 +154,10 @@ public class BuildScript : MonoBehaviour
         {
             escMenu.transform.GetChild(1).gameObject.SetActive(false);
             escMenu.SetActive(false);
-            isBuilderOn = true;
         }
         else
         {
             escMenu.SetActive(true);
-            isBuilderOn = false;
         }
     }
 
@@ -202,26 +204,44 @@ public class BuildScript : MonoBehaviour
         ch_ShadowBuilding[num_building_shadow].transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, -90 * buildDirection);
     }
     //Looks for gamesObj in a radius of mouse
-    public GameObject findBuildingGameObject(string tag)
+    public GameObject findBuildingGameObject(int id, string tag = "null")
     {
-        Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
-        GameObject g = null;
-        try
-        {
-            for(int i = 0; i < c.Length; i++)
+        if (tag != "null"){
+            Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
+            GameObject g = null;
+            try
             {
-                if(c[i].tag == tag)
+                for (int i = 0; i < c.Length; i++)
                 {
-                    g = c[i].gameObject;
+                    if (c[i].tag == tag)
+                    {
+                        g = c[i].gameObject;
+                    }
+                }
+
+            }
+            catch
+            {
+                g = null;
+            }
+            return g;
+        }else{
+            Collider2D[] c = Physics2D.OverlapCircleAll(buildPosition(), 0.02f);
+            GameObject g = null;
+            try
+            {
+                for (int i = 0; i < c.Length; i++)
+                {
+                    if (c[i].GetComponent<BuildingId>().id == id)
+                        g = c[i].gameObject;
                 }
             }
-
+            catch
+            {
+                g = null;
+            }
+            return g;
         }
-        catch
-        {
-            g = null;
-        }
-        return g;
     }
     void removeAllItems()
     {
@@ -235,8 +255,8 @@ public class BuildScript : MonoBehaviour
     }
     void RefinerOpen()
     {
-        GameObject g = findBuildingGameObject("Refiner");
-        if(g != null)
+        GameObject g = findBuildingGameObject(0, "Refiner");
+        if (g != null)
         {
             gb = g.gameObject.transform.GetChild(4).gameObject;
             if (gb.activeSelf)
@@ -248,14 +268,18 @@ public class BuildScript : MonoBehaviour
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
             }
         }
-        else if(gb != null)
+        else if (gb != null)
         {
             if (gb.activeSelf)
             {
                 gb.SetActive(false);
             }
         }
-
+    }
+    void AssemblerOpen()
+    {
+        GameObject assembler = findBuildingGameObject(2);
+        assembler.transform.GetChild(1).gameObject.SetActive(!assembler.transform.GetChild(1).gameObject.activeSelf);
     }
     void DropItem()
     {
