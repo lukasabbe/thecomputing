@@ -70,7 +70,7 @@ public class TrashGrabber : MonoBehaviour
         Vector2 buildPosition = Camera.main.GetComponent<BuildScript>().buildPosition();
         if (new Vector2(transform.position.x, transform.position.y) == buildPosition) // When cursor is over building
         {
-            if (!buyMenu.active) buyMenu.SetActive(true);
+            if (!buyMenu.activeSelf) buyMenu.SetActive(true);
             //if (Gamemanager.money == upgradePrice) speedLVL++;
         }
     }

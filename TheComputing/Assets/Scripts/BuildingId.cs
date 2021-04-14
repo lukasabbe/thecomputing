@@ -8,4 +8,5 @@ public class BuildingId : MonoBehaviour
     public int rot;
     public int listpos;
     public int cost;
+    public int indexActiveted;
 }

@@ -42,6 +42,11 @@ public class BuildScript : MonoBehaviour
     void Update()
     {
         PlayerInputs();
+        Gamemanager.AnimateSync+= Time.deltaTime;
+        if (Gamemanager.AnimateSync >= 0.267f)
+        {
+            Gamemanager.AnimateSync = 0;
+        }
     }
     void PlayerInputs()
     {
@@ -117,6 +122,7 @@ public class BuildScript : MonoBehaviour
                 build.transform.position = buildPosition();
                 build.GetComponent<BuildingId>().rot = buildDirection;
                 build.transform.rotation = Quaternion.Euler(0, 0, -90 * buildDirection);
+
             }
         }
     }
