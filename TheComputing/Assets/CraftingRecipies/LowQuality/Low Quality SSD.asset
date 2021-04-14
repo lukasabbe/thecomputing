@@ -15,4 +15,4 @@ MonoBehaviour:
   itemIds: 0f00000005000000
   itemAmounts: 0200000004000000
   itemsCraftedPerTime: 1
-  item: {fileID: 5144979931217977719, guid: 0df9efeda62081c4783ed9187fa3b8d1, type: 3}
+  item: {fileID: 2692537721013376296, guid: 6663b415427c0874b9cdb800fb881eca, type: 3}
