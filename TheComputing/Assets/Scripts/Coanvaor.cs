@@ -84,26 +84,90 @@ public class Coanvaor : MonoBehaviour
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 22;
                 }
-                //Sväng svängar
-                if (t == 19 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 0)//från höger sväng up
+                //Sväng svängar Up
+                if (t == 19 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 0)//up från höger sväng up
                 {
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 17;
                 }
-                if (t == 19 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 2)//från höger sväng ner
+                if (t == 19 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 2)//up från höger sväng ner
                 {
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 16;
                 }
-                if (t == 21 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 0)//från vänster sväng up
+                if (t == 21 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 0)//up från vänster sväng up
                 {
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 23;
                 }
-                if (t == 21 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 2)//från vänster sväng ner
+                if (t == 21 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 2)//up från vänster sväng ner
                 {
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 22;
+                }
+                //flera svängar Ner 
+
+                if (t == 20 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 0)//ner från höger sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 23;
+                }
+                if (t == 20 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 2)//ner från höger sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 22;
+                }
+                if (t == 18 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 0)//ner från vänster sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 17;
+                }
+                if (t == 18 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 2)//ner från vänster sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 16;
+                }
+                //fler svängar höger
+                if (t == 16 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 1)//höger från höger sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 18;
+                }
+                if (t == 16 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 3)//höger från höger sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 20;
+                }
+                if (t == 17 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 1)//höger från vänster sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 19;
+                }
+                if (t == 17 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 3)//höger från vänster sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 21;
+                }
+                //flera svängar vänster
+                if (t == 22 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 1)//höger från höger sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 18;
+                }
+                if (t == 22 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 3)//höger från höger sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 20;
+                }
+                if (t == 23 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 1)//höger från vänster sväng up
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 19;
+                }
+                if (t == 23 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 3)//höger från vänster sväng ner
+                {
+                    setChild(false);
+                    gameObject.GetComponent<BuildingId>().indexActiveted = 21;
                 }
 
             }
