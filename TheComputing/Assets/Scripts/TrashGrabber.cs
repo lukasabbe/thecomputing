@@ -18,9 +18,7 @@ public class TrashGrabber : MonoBehaviour
 
     void Start()
     {
-        upgradePrice = defaultUpgradePrice + (speedLVL * 20);
-        lvl.GetComponent<UnityEngine.UI.Text>().text = speedLVL.ToString();
-        buyPrice.GetComponent<UnityEngine.UI.Text>().text = upgradePrice.ToString();
+        RefreshMenuText();
     }
     void Update()
     {
@@ -32,8 +30,6 @@ public class TrashGrabber : MonoBehaviour
             Interact(); // Calls the interact void
             if (menu) buyMenu.SetActive(false);
         }
-
-        
     }
     public void OnTriggerStay2D(Collider2D col)
     {
@@ -71,7 +67,22 @@ public class TrashGrabber : MonoBehaviour
         if (new Vector2(transform.position.x, transform.position.y) == buildPosition) // When cursor is over building
         {
             if (!buyMenu.activeSelf) buyMenu.SetActive(true);
-            //if (Gamemanager.money == upgradePrice) speedLVL++;
         }
+    }
+    public void BuyButton()
+    {
+        if (Gamemanager.money >= upgradePrice) // Check that you have enough money
+        {
+            speedLVL++; // Upgrade
+            Gamemanager.money += -upgradePrice; // Remove money
+            RefreshMenuText(); // Refresh the menu values
+        }
+    }
+    void RefreshMenuText()
+    {
+        // Update the price and values on the menu
+        upgradePrice = defaultUpgradePrice + (speedLVL * 20);
+        lvl.GetComponent<UnityEngine.UI.Text>().text = speedLVL.ToString();
+        buyPrice.GetComponent<UnityEngine.UI.Text>().text = upgradePrice.ToString();
     }
 }
