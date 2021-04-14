@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8534357666685517759}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1423189074309221437}
+        m_TargetAssemblyTypeName: TrashGrabber, Assembly-CSharp
+        m_MethodName: BuyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &362518073474437699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1027,7 @@ MonoBehaviour:
   rot: 0
   listpos: 0
   cost: 140
+  indexActiveted: 0
 --- !u!1 &6758593693709954722
 GameObject:
   m_ObjectHideFlags: 0
