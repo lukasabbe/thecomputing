@@ -5,7 +5,6 @@ using UnityEngine;
 public class Coanvaor : MonoBehaviour
 {
     public bool hasSynced = false;
-    
     private void Start()
     {
         gameObject.transform.rotation = Quaternion.Euler(0, 0,0);
@@ -169,7 +168,94 @@ public class Coanvaor : MonoBehaviour
                     setChild(false);
                     gameObject.GetComponent<BuildingId>().indexActiveted = 21;
                 }
-
+                //ingångar från sidan up
+                if (t == 0 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 3)//Ingång vänster
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 2;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if (t == 0 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 1)//Ingång höger
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 3;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if ((t == 2 || t == 3) && (i == 3 || i == 2) && (gameObject.GetComponent<BuildingId>().rot == 3 || gameObject.GetComponent<BuildingId>().rot == 1))//Ingång båda
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 1;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                //ingångar från sidan ner
+                if (t == 4 && i == 3 && gameObject.GetComponent<BuildingId>().rot == 3)//Ingång vänster
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 6;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if (t == 4 && i == 2 && gameObject.GetComponent<BuildingId>().rot == 1)//Ingång höger
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 7;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if ((t == 6 || t == 7) && (i == 3 || i == 2) && (gameObject.GetComponent<BuildingId>().rot == 3 || gameObject.GetComponent<BuildingId>().rot == 1))//Ingång båda
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 5;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                //Ingångar från sidan höger
+                if (t == 8 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 0)//Ingång ner
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 11;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if (t == 8 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 2)//Ingång up
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 10;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if ((t == 10 || t == 11) && (i == 1 || i == 0) && (gameObject.GetComponent<BuildingId>().rot == 0 || gameObject.GetComponent<BuildingId>().rot == 2))//Ingång båda
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 9;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                //Ingång från sidan vänster
+                if (t == 12 && i == 0 && gameObject.GetComponent<BuildingId>().rot == 0)//Ingång ner
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 15;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if (t == 12 && i == 1 && gameObject.GetComponent<BuildingId>().rot == 2)//Ingång up
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 14;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
+                if ((t == 15 || t == 14) && (i == 1 || i == 0) && (gameObject.GetComponent<BuildingId>().rot == 0 || gameObject.GetComponent<BuildingId>().rot == 2))//Ingång båda
+                {
+                    g[i].transform.GetComponent<Coanvaor>().setChild(false);
+                    g[i].GetComponent<BuildingId>().indexActiveted = 13;
+                    g[i].transform.GetComponent<Coanvaor>().setChild(true);
+                    g[i].transform.GetComponent<Coanvaor>().hasSynced = false;
+                }
             }
         }
         setChild(true);
