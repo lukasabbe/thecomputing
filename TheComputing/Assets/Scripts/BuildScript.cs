@@ -150,12 +150,10 @@ public class BuildScript : MonoBehaviour
         {
             escMenu.transform.GetChild(1).gameObject.SetActive(false);
             escMenu.SetActive(false);
-            isBuilderOn = true;
         }
         else
         {
             escMenu.SetActive(true);
-            isBuilderOn = false;
         }
     }
 
