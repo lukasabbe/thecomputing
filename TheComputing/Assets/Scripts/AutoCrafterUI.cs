@@ -40,9 +40,10 @@ public class AutoCrafterUI : MonoBehaviour{
     }
     void CreateItemList(){
         for (int i = 0; i < autoCrafterScript.recipieObj.Length; i++) {
-            GameObject newPanel = Instantiate(panel, Vector3.zero, Quaternion.identity, panelParent.transform);
+            GameObject newPanel = Instantiate(panel, Vector3.zero, Quaternion.Euler(0, 0, 90), panelParent.transform);
 
-            newPanel.transform.position = panelParent.transform.position + new Vector3(0, -(205 * i) - 110, 0);
+            newPanel.transform.localPosition = panelParent.transform.localPosition + new Vector3(0, -(118 * i) - 60, 0);
+            newPanel.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
             newPanel.transform.GetChild(0).GetComponent<Text>().text = autoCrafterScript.recipieObj[i].item.GetComponent<Item>().ItemName;
             newPanel.transform.GetChild(1).GetComponent<Text>().text = autoCrafterScript.recipieObj[i].item.GetComponent<Item>().ItemDescription;

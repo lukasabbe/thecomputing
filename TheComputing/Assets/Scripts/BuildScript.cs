@@ -279,7 +279,7 @@ public class BuildScript : MonoBehaviour
     void AssemblerOpen()
     {
         GameObject assembler = findBuildingGameObject(2);
-        assembler.transform.GetChild(1).gameObject.SetActive(!assembler.transform.GetChild(1).gameObject.activeSelf);
+        if (assembler != null) assembler.transform.GetChild(1).gameObject.SetActive(!assembler.transform.GetChild(1).gameObject.activeSelf);
     }
     void DropItem()
     {

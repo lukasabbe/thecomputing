@@ -57,6 +57,8 @@ public class AutoCrafter : MonoBehaviour
     High quality RAM             : 41
     High quality SSD             : 42
 
+    Computer                     : 43
+
     ----------Item ids---------- 
 
     */
