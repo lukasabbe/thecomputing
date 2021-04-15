@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Low Quality Circuitboard
   m_EditorClassIdentifier: 
   itemIds: 0100000005000000
-  itemAmounts: 0200000001000000
+  itemAmounts: 0400000004000000
+  itemsCraftedPerTime: 4
   item: {fileID: 6351664924014780679, guid: 3aa4a0cb67a6b1847858091749374c23, type: 3}

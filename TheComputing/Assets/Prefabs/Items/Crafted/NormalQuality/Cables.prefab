@@ -103,6 +103,7 @@ MonoBehaviour:
   ItemDescription: 
   SellPrice: 24
   refinsTo: 
+  autoC: {fileID: 7745998387802206308, guid: 6839bc7ef70977b47ba7e0d0830a9c6f, type: 3}
 --- !u!61 &5493348361763973330
 BoxCollider2D:
   m_ObjectHideFlags: 0

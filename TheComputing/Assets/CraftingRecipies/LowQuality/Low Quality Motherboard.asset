@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e075078f3a59408cec5239555a18b, type: 3}
   m_Name: Low Quality Motherboard
   m_EditorClassIdentifier: 
-  itemIds: 010000000d000000090000000f000000
-  itemAmounts: 04000000020000000200000002000000
+  itemIds: 010000000d000000050000000f000000
+  itemAmounts: 02000000010000000200000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 4445640506527643568, guid: 4e0fa62bb07c83e49a560a15b5f3d9d6, type: 3}

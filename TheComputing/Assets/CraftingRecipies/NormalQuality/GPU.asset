@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GPU
   m_EditorClassIdentifier: 
   itemIds: 0f0000000200000009000000
-  itemAmounts: 040000000200000002000000
+  itemAmounts: 040000000400000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 1409533805710880084, guid: b1037cdb11ba52543bc2c2f260f40432, type: 3}

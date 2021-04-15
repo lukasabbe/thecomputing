@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: High Quality Harddrive
   m_EditorClassIdentifier: 
   itemIds: 230000000300000002000000
-  itemAmounts: 040000000400000002000000
+  itemAmounts: 040000000400000008000000
+  itemsCraftedPerTime: 1
   item: {fileID: 1172871761280828042, guid: 75a6e897762d31c45916f2652637a4ba, type: 3}

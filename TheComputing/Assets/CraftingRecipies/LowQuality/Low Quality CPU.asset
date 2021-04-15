@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6e075078f3a59408cec5239555a18b, type: 3}
   m_Name: Low Quality CPU
   m_EditorClassIdentifier: 
-  itemIds: 0f0000000600000009000000
-  itemAmounts: 020000000200000002000000
+  itemIds: 0f0000000600000005000000
+  itemAmounts: 010000000200000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 5094011234666664391, guid: e04261b5aa8fd2448b4dc021c70b505b, type: 3}

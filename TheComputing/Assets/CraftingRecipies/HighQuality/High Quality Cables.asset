@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: High Quality Cables
   m_EditorClassIdentifier: 
   itemIds: 0300000008000000
-  itemAmounts: 0100000001000000
+  itemAmounts: 0600000008000000
+  itemsCraftedPerTime: 2
   item: {fileID: 3913961405188938457, guid: 30bc096ead506fe4cb680306d88cf995, type: 3}

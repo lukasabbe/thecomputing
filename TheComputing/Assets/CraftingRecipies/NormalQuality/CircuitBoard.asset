@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CircuitBoard
   m_EditorClassIdentifier: 
   itemIds: 0200000009000000
-  itemAmounts: 0100000001000000
+  itemAmounts: 0600000006000000
+  itemsCraftedPerTime: 4
   item: {fileID: 2524723390232302795, guid: 5ac6d85eec0f18d4a8588a6d7d47774b, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Low Quality GPU
   m_EditorClassIdentifier: 
   itemIds: 0f0000000100000005000000
-  itemAmounts: 040000000200000002000000
+  itemAmounts: 020000000100000001000000
+  itemsCraftedPerTime: 1
   item: {fileID: 3433151198488078754, guid: 293bfaffe3f11bf489d9f10b07af40fa, type: 3}

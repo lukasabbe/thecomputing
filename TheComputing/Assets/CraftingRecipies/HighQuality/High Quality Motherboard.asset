@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: High Quality Motherboard
   m_EditorClassIdentifier: 
   itemIds: 03000000210000000900000023000000
-  itemAmounts: 04000000020000000600000004000000
+  itemAmounts: 04000000020000000600000008000000
+  itemsCraftedPerTime: 1
   item: {fileID: 4748365589486547077, guid: 11d821a58ca14914fa7304a3b1ed1cce, type: 3}

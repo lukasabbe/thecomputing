@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CPU
   m_EditorClassIdentifier: 
   itemIds: 0f0000000a00000009000000
-  itemAmounts: 020000000200000002000000
+  itemAmounts: 030000000200000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 1934118358135712293, guid: 49ac5477fd178ca40955e1e4d35dc278, type: 3}

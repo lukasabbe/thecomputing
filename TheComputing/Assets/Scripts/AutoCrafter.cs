@@ -145,12 +145,10 @@ public class AutoCrafter : MonoBehaviour
     private void Update(){
         float itemCheckRadius = 0.05f;
         if (Physics2D.OverlapCircle(input1, itemCheckRadius, itemLayer)){
-            Debug.Log("INPUT1 picked up an item");
             GameObject itemToAdd = Physics2D.OverlapCircle(input1, itemCheckRadius, itemLayer).gameObject;
             addItemToSlot(itemToAdd);
         }
         if(Physics2D.OverlapCircle(input2, itemCheckRadius, itemLayer)){
-            Debug.Log("INPUT2 picked up an item");
             GameObject itemToAdd = Physics2D.OverlapCircle(input2, itemCheckRadius, itemLayer).gameObject;
             addItemToSlot(itemToAdd);
         }
@@ -164,7 +162,6 @@ public class AutoCrafter : MonoBehaviour
     }
 
     public void addItemToSlot(GameObject item){
-        Debug.Log("Trying to add " + item.GetComponent<Item>().ItemName);
         if(item != null){
             bool hasBeenAdded = false;
             for (int i = 0; i < slots.Count; i++){
@@ -173,7 +170,6 @@ public class AutoCrafter : MonoBehaviour
                         hasBeenAdded = true;
                         slots[i].itemsInStack++;
                         ui.UpdateUI();
-                        Debug.Log("item: " + item.GetComponent<Item>().ItemName + " id: " + item.GetComponent<Item>().id);
                         item.SetActive(false);
                     }
                 }
@@ -185,7 +181,6 @@ public class AutoCrafter : MonoBehaviour
                         slots[i].item = item;
                         slots[i].itemsInStack++;
                         ui.UpdateUI();
-                        Debug.Log("item: " + item.GetComponent<Item>().ItemName + "id: " + item.GetComponent<Item>().id);
                         item.SetActive(false);
                     }
             if (slots[0].item != null && slots[1].item != null) tryToCraft();
@@ -193,13 +188,11 @@ public class AutoCrafter : MonoBehaviour
     }
     List<GameObject> itemsToDelete = new List<GameObject>();
     public void tryToCraft(){
-        Debug.Log("TRYING TO CRAFT");
         bool[] hasItemsOnSlot = new bool[] { false, false, false, false }; //Varje crafting slot har en check som skapas här
         for(int i = 0; i < recipies[selectedRecipeIndex].uniqueItems; i++){ //Loopar igenom alla recipies
             for(int i1 = 0; i1 < slots.Count; i1++){ //Loopar igenom alla crafterns slotts 
                 if(slots[i1].item != null){ //Kollar så att slottens item inte är null
                     if (recipies[selectedRecipeIndex].itemIds[i] == slots[i1].item.GetComponent<Item>().id && recipies[selectedRecipeIndex].itemAmounts[i] <= slots[i1].itemsInStack){ //Kollar om recipies item matchar slottens item och mängd
-                        Debug.Log("slot" + (i1 + 1) + ": " + slots[i1].item);
                         hasItemsOnSlot[i] = true;
                     }
                 }
@@ -248,8 +241,6 @@ public class AutoCrafter : MonoBehaviour
         }
     }
     public void SetCraftingIndex(int index){
-        Debug.Log("Index changed: " + index);
-
         itemsCrafted.Clear();
         slots.Clear();
 

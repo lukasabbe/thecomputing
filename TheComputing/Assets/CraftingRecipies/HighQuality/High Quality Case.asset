@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: High Quality Case
   m_EditorClassIdentifier: 
   itemIds: 030000000a000000
-  itemAmounts: 0400000004000000
+  itemAmounts: 0800000006000000
+  itemsCraftedPerTime: 1
   item: {fileID: 1296457104167808612, guid: a824a84ecc7ce5c4b8dd0cd9de6346a8, type: 3}

@@ -23,7 +23,7 @@ public class Assembler : MonoBehaviour
     private void Update(){
         if (Physics2D.OverlapCircle(transform.position + new Vector3(-0.5f, 0, 0), 0.05f, itemLayer)) tryToAttachPart(Physics2D.OverlapCircle(transform.position + new Vector3(-0.5f, 0, 0), 0.05f, itemLayer).gameObject);
         if (Physics2D.OverlapCircle(transform.position + new Vector3(0.5f, 0, 0), 0.05f, itemLayer)) tryToAttachPart(Physics2D.OverlapCircle(transform.position + new Vector3(0.5f, 0, 0), 0.05f, itemLayer).gameObject);
-
+        /*
         if (Input.GetKeyDown(KeyCode.U))
         {
             for(int i = 0; i < compuratt.Length; i++)
@@ -31,6 +31,7 @@ public class Assembler : MonoBehaviour
                 Instantiate(compuratt[i],Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
             }
         }
+        */
         tryToBuildComputer();
     }
     void tryToAttachPart(GameObject item){
@@ -54,7 +55,7 @@ public class Assembler : MonoBehaviour
             case_.Add(item);
         }
 
-        if ((item.GetComponent<Item>().id == 23 || item.GetComponent<Item>().id == 33 || item.GetComponent<Item>().id == 34)){
+        if ((item.GetComponent<Item>().id == 13 || item.GetComponent<Item>().id == 23 || item.GetComponent<Item>().id == 33)){
             cables.Add(item);
         }
 
@@ -66,7 +67,7 @@ public class Assembler : MonoBehaviour
             ssd.Add(item);
         }
 
-        if ((item.GetComponent<Item>().id == 23 || item.GetComponent<Item>().id == 33 || item.GetComponent<Item>().id == 34)) {
+        if ((item.GetComponent<Item>().id == 20 || item.GetComponent<Item>().id == 30 || item.GetComponent<Item>().id == 40)) {
             psu.Add(item);
         }
 
@@ -74,10 +75,9 @@ public class Assembler : MonoBehaviour
     }
     void tryToBuildComputer()
     {
-        if (motherBoard.Count >= 1 && cpu.Count >= 1 && ram.Count >= 1 && case_.Count >= 1 && cables.Count >= 4 && harddrive.Count >= 1 && ssd.Count >= 1 && psu.Count >= 1)
+        if (motherBoard.Count >= 1 && cpu.Count >= 1 && gpu.Count >= 1 && ram.Count >= 1 && case_.Count >= 1 && cables.Count >= 4 && harddrive.Count >= 1 && ssd.Count >= 1 && psu.Count >= 1)
         {
             GameObject computerInstance = Instantiate(computer, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
-            computerInstance.GetComponent<Item>().SellPrice = 1000;
 
             int quality = 0;
 
@@ -121,21 +121,52 @@ public class Assembler : MonoBehaviour
                 quality += 50;
             }
 
-            if (cables[cables.Count - 1].GetComponent<Item>().id == 13){
+            for(int i = 0; i < 4; i++){
+                if (cables[i].GetComponent<Item>().id == 13){
+                    quality += 10;
+                }else if (cables[i].GetComponent<Item>().id == 23){
+                    quality += 30;
+                }else if (cables[i].GetComponent<Item>().id == 33){
+                    quality += 50;
+                }
+            }
+
+            if (harddrive[harddrive.Count - 1].GetComponent<Item>().id == 18){
                 quality += 10;
-            }else if (cables[cables.Count - 1].GetComponent<Item>().id == 23){
+            }else if (harddrive[harddrive.Count - 1].GetComponent<Item>().id == 28){
                 quality += 30;
-            }else if (cables[cables.Count - 1].GetComponent<Item>().id == 33){
+            }else if (harddrive[harddrive.Count - 1].GetComponent<Item>().id == 38){
                 quality += 50;
             }
 
-            if (cables[cables.Count - 1].GetComponent<Item>().id == 13){
+            if (ssd[ssd.Count - 1].GetComponent<Item>().id == 22){
                 quality += 10;
-            }else if (cables[cables.Count - 1].GetComponent<Item>().id == 23){
+            }else if (ssd[ssd.Count - 1].GetComponent<Item>().id == 32){
                 quality += 30;
-            }else if (cables[cables.Count - 1].GetComponent<Item>().id == 33){
+            }else if (ssd[ssd.Count - 1].GetComponent<Item>().id == 42){
                 quality += 50;
             }
+
+            if (psu[psu.Count - 1].GetComponent<Item>().id == 20){
+                quality += 10;
+            }
+            else if (psu[psu.Count - 1].GetComponent<Item>().id == 30){
+                quality += 30;
+            }
+            else if (psu[psu.Count - 1].GetComponent<Item>().id == 40){
+                quality += 50;
+            }
+
+            if(quality > 0 && quality < 330)
+                computerInstance.GetComponent<Item>().SellPrice = 5000;
+            else if (quality > 330 && quality < 550)
+                computerInstance.GetComponent<Item>().SellPrice = 8000;
+            else if (quality >= 550)
+                computerInstance.GetComponent<Item>().SellPrice = 16000;
+
+            //Low teir 120 Mid Teir 330 High Teir 550
+
+            Debug.Log("Quality: " + quality);
 
             motherBoard.RemoveAt(motherBoard.Count - 1);
             cpu.RemoveAt(cpu.Count - 1);

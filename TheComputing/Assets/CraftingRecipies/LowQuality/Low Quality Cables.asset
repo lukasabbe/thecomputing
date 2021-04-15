@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Low Quality Cables
   m_EditorClassIdentifier: 
   itemIds: 0100000004000000
-  itemAmounts: 0100000002000000
+  itemAmounts: 0100000001000000
   itemsCraftedPerTime: 2
   item: {fileID: 6669386623627994290, guid: c121242e8be3b624fa36eaf2331038eb, type: 3}

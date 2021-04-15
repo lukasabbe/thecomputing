@@ -101,8 +101,9 @@ MonoBehaviour:
   id: 7
   ItemName: Trash Silver
   ItemDescription: 
-  SellPrice: 4
+  SellPrice: 24
   refinsTo: 0c000000
+  autoC: {fileID: 7745998387802206308, guid: 6839bc7ef70977b47ba7e0d0830a9c6f, type: 3}
 --- !u!61 &4839196094528752929
 BoxCollider2D:
   m_ObjectHideFlags: 0

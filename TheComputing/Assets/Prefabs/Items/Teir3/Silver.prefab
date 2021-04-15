@@ -101,8 +101,9 @@ MonoBehaviour:
   id: 12
   ItemName: Silver
   ItemDescription: 
-  SellPrice: 14
+  SellPrice: 86
   refinsTo: 
+  autoC: {fileID: 7745998387802206308, guid: 6839bc7ef70977b47ba7e0d0830a9c6f, type: 3}
 --- !u!61 &2828486961564138074
 BoxCollider2D:
   m_ObjectHideFlags: 0

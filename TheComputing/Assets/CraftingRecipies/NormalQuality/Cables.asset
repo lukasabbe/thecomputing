@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Cables
   m_EditorClassIdentifier: 
   itemIds: 0200000008000000
-  itemAmounts: 0100000001000000
+  itemAmounts: 0100000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 7494455596746121060, guid: 50f89d80e693c18499630bce3ce82282, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: High Quality CPU
   m_EditorClassIdentifier: 
   itemIds: 230000000a00000009000000
-  itemAmounts: 020000000200000002000000
+  itemAmounts: 040000000200000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 4238826495921600849, guid: 034fb75dc6d616b4182f3283d4bd18c1, type: 3}

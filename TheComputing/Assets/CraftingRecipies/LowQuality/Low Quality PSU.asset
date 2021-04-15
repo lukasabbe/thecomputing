@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Low Quality PSU
   m_EditorClassIdentifier: 
   itemIds: 060000000d000000
-  itemAmounts: 0400000004000000
+  itemAmounts: 0200000002000000
+  itemsCraftedPerTime: 1
   item: {fileID: 4936875282216125826, guid: 990f9a21045b1f849b5e388063ffa054, type: 3}
