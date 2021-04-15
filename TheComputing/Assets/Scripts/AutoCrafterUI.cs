@@ -42,7 +42,7 @@ public class AutoCrafterUI : MonoBehaviour{
         for (int i = 0; i < autoCrafterScript.recipieObj.Length; i++) {
             GameObject newPanel = Instantiate(panel, Vector3.zero, Quaternion.Euler(0, 0, 90), panelParent.transform);
 
-            newPanel.transform.localPosition = panelParent.transform.localPosition + new Vector3(0, -(118 * i) - 60, 0);
+            newPanel.transform.localPosition = panelParent.transform.localPosition + new Vector3(0, -(118 * i) - 1450, 0);
             newPanel.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
             newPanel.transform.GetChild(0).GetComponent<Text>().text = autoCrafterScript.recipieObj[i].item.GetComponent<Item>().ItemName;
