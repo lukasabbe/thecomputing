@@ -3158,7 +3158,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: de98d70f9b9473b42baa03f7dc45c599, type: 2}
   craftTime: 3
   speedLVL: 0
-  defaultUpgradePrice: 0
+  defaultUpgradePrice: 30
   upgradePrice: 0
   buyPrice: {fileID: 1478413903483951688}
   lvl: {fileID: 6051174509648276089}
