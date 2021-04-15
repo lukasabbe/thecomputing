@@ -100,8 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   ItemName: Trash Gold
+  ItemDescription: 
   SellPrice: 6
-  refinsTo: 
+  refinsTo: 09000000
 --- !u!61 &6666457531047337880
 BoxCollider2D:
   m_ObjectHideFlags: 0
