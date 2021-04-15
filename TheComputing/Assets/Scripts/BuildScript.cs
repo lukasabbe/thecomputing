@@ -141,6 +141,8 @@ public class BuildScript : MonoBehaviour
                 if (hitCollider.tag == "Building" || hitCollider.tag == "Refiner") 
                 {
                     int index = Gamemanager.Buildings.FindIndex(g => g == hitCollider.gameObject);
+                    if(!freeBuildings)Gamemanager.money += hitCollider.gameObject.GetComponent<BuildingId>().cost / 2;
+                    Gamemanager.uppdateText();
                     Gamemanager.Buildings.RemoveAt(index);
                 }
                 Destroy((hitCollider).gameObject);
