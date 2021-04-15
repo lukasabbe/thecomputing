@@ -102,7 +102,7 @@ MonoBehaviour:
   ItemName: Trash Silver
   ItemDescription: 
   SellPrice: 4
-  refinsTo: 
+  refinsTo: 0c000000
 --- !u!61 &4839196094528752929
 BoxCollider2D:
   m_ObjectHideFlags: 0

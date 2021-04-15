@@ -102,7 +102,7 @@ MonoBehaviour:
   ItemName: Trash Iron
   ItemDescription: 
   SellPrice: 6
-  refinsTo: 
+  refinsTo: 0a000000
 --- !u!61 &4598684126694952860
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -102,7 +102,7 @@ MonoBehaviour:
   ItemName: Plastic
   ItemDescription: 
   SellPrice: 4
-  refinsTo: 
+  refinsTo: 03000000
 --- !u!61 &73964818173020381
 BoxCollider2D:
   m_ObjectHideFlags: 0

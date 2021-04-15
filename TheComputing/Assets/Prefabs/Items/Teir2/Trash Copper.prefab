@@ -102,7 +102,7 @@ MonoBehaviour:
   ItemName: Trash Copper
   ItemDescription: 
   SellPrice: 4
-  refinsTo: 
+  refinsTo: 08000000
 --- !u!61 &2857238537237298908
 BoxCollider2D:
   m_ObjectHideFlags: 0
