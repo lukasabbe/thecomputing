@@ -84,6 +84,13 @@ public class AutoCrafter : MonoBehaviour
     slot emptySlot1 = new slot();
     slot emptySlot2 = new slot();
     slot emptySlot3 = new slot();
+
+    // Lvls, price and default price for upgrading
+    public int speedLVL = 0;
+    public int defaultUpgradePrice, upgradePrice;
+
+    public GameObject buyPrice, lvl;
+
     private void Start(){
         ui = GetComponent<AutoCrafterUI>();
         buildScript = Camera.main.GetComponent<BuildScript>();
@@ -130,6 +137,7 @@ public class AutoCrafter : MonoBehaviour
                 Debug.LogError("Trying to add recipie with arrays of different sizes. Make sure the 'ItemId' and 'ItemAmount' arrays have the same length.");
             }
         }
+        RefreshMenuText();
     }
 
     private void Update(){
@@ -145,7 +153,7 @@ public class AutoCrafter : MonoBehaviour
             addItemToSlot(itemToAdd);
         }
 
-        if (craftTime > 0) craftTime -= Time.deltaTime;
+        if (craftTime > 0) craftTime -= Time.deltaTime + (Time.deltaTime * speedLVL / 3);
         if(itemsCrafted.Count > 0 && !Physics2D.OverlapCircle(output, 0.4f, itemLayer) && craftTime <= 0){
             craftTime = craftTimeReset;
             Instantiate(itemsCrafted[itemsCrafted.Count - 1], output, Quaternion.identity);
@@ -264,6 +272,22 @@ public class AutoCrafter : MonoBehaviour
         public int[] itemAmounts;
 
         public GameObject item;
+    }
+    public void BuyButton()
+    {
+        if (Gamemanager.money >= upgradePrice) // Check that you have enough money
+        {
+            speedLVL++; // Upgrade
+            Gamemanager.money += -upgradePrice; // Remove money
+            RefreshMenuText(); // Refresh the menu values
+        }
+    }
+    void RefreshMenuText()
+    {
+        // Update the price and values on the menu
+        upgradePrice = defaultUpgradePrice + (speedLVL * 20);
+        lvl.GetComponent<UnityEngine.UI.Text>().text = speedLVL.ToString();
+        buyPrice.GetComponent<UnityEngine.UI.Text>().text = upgradePrice.ToString();
     }
 
     /*
