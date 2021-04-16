@@ -116,7 +116,7 @@ public class AutoCrafter : MonoBehaviour
                 break;
             case (Right):
                 input1 = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-                input2 = new Vector3(transform.position.x, transform.position.y+ 0.5f, transform.position.z);
+                input2 = new Vector3(transform.position.x, transform.position.y+ -0.5f, transform.position.z);
                 output = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
                 break;
         }
