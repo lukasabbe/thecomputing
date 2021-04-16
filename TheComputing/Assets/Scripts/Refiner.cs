@@ -67,6 +67,7 @@ public class Refiner : MonoBehaviour
     public int ch_item;
     public int ch_id;
     public int refinerWait;
+    public Button ofMenu;
     private void Start()
     {
         //scrap buttons
@@ -77,6 +78,7 @@ public class Refiner : MonoBehaviour
             //Debug.Log(item.id + "\n"+item.pos);
             RefinerButtonItem[i].onClick.AddListener(delegate { changeItem(item); });
         }
+        ofMenu.onClick.AddListener(onClose);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -96,6 +98,11 @@ public class Refiner : MonoBehaviour
             }
 
         }
+    }
+    void onClose()
+    {
+        gameObject.transform.GetChild(4).gameObject.SetActive(false);
+        Camera.main.GetComponent<BuildScript>().RefinerOpen = false;
     }
     void changeItem(obj item)
     {
