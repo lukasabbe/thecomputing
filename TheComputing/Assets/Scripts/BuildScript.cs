@@ -397,7 +397,7 @@ public class BuildScript : MonoBehaviour
             {
                 r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
-                r.GetComponent<ConveyorBelt>().direction = g.rotation[i];
+                r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
                 Debug.Log(g.spliterData[i].dir);
                 r.GetComponent<Splitter>().direction = g.spliterData[i].dir;
                 r.GetComponent<Splitter>().splitDirection = g.spliterData[i].splitDir;
