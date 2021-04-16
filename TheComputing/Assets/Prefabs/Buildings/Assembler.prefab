@@ -118,7 +118,7 @@ MonoBehaviour:
   id: 8
   rot: 0
   listpos: 0
-  cost: 500
+  cost: 2500
   indexActiveted: 0
 --- !u!114 &8315466659099281455
 MonoBehaviour:

@@ -9,7 +9,7 @@ public class RotateBuilding : MonoBehaviour
     public int direction = 0;
     public bool rotationSpawnd = false;
 
-    void Start()
+    void Awake()
     {
         // Finds the Main Camera and it's BuildScript
         GameObject mainCamera = GameObject.Find("Main Camera");

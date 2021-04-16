@@ -984,7 +984,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5209943008457088302}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.080544956
+  m_Size: 0.08054497
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2445,13 +2445,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5626349388927234189}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7745998387802206304}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7881407427454487925
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3322,7 +3322,7 @@ MonoBehaviour:
   id: 2
   rot: 0
   listpos: 0
-  cost: 100
+  cost: 800
   indexActiveted: 0
 --- !u!114 &133842894
 MonoBehaviour:
