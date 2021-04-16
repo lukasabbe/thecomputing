@@ -261,6 +261,7 @@ public class BuildScript : MonoBehaviour
         GameObject g = findBuildingGameObject(0, "Refiner");
         if (g != null)
         {
+            gb = g.gameObject.transform.GetChild(4).gameObject;
             if (gb.activeSelf)
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(false);
@@ -268,7 +269,6 @@ public class BuildScript : MonoBehaviour
             else
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
-                gb = g.gameObject.transform.GetChild(4).gameObject;
             }
         }
         else if (gb != null)
