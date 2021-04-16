@@ -414,7 +414,7 @@ MonoBehaviour:
   id: 7
   rot: 0
   listpos: 0
-  cost: 0
+  cost: 280
   indexActiveted: 0
 --- !u!1 &1001155046241914768
 GameObject:

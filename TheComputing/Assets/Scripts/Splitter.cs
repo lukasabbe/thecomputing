@@ -28,7 +28,7 @@ public class Splitter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             GameObject target = buildScript.findBuildingGameObject(0, "Building");
-            if (target.GetComponent<Splitter>() != null)
+            if (!target.TryGetComponent(out Splitter splitter))
             {
                 splitDirection *= -1;
                 splitDirectionArrow.transform.localScale = new Vector3(splitDirection, 1, 1);

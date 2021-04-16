@@ -14,6 +14,8 @@ public class BuildScript : MonoBehaviour
 
     public int num_building_shadow = 0;
 
+    public bool RefinerOpen;
+
     public bool freeBuildings;
 
     public GameObject BuildMenu;
@@ -85,7 +87,7 @@ public class BuildScript : MonoBehaviour
         //opem refiner (Test)
         if (Input.GetKeyDown("e"))
         {
-            RefinerOpen();
+            RefinerOpenG();
             AssemblerOpen();
         }
 
@@ -256,7 +258,7 @@ public class BuildScript : MonoBehaviour
             Destroy(i);
         }
     }
-    void RefinerOpen()
+    void RefinerOpenG()
     {
         GameObject g = findBuildingGameObject(0, "Refiner");
         if (g != null)
@@ -265,10 +267,14 @@ public class BuildScript : MonoBehaviour
             if (gb.activeSelf)
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+                RefinerOpen = false;
             }
-            else
+            else if(!RefinerOpen)
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+                RefinerOpen = true;
+                BuildMenu.SetActive(false);
+                isBuilderOn = false;
             }
         }
         else if (gb != null)
@@ -276,6 +282,7 @@ public class BuildScript : MonoBehaviour
             if (gb.activeSelf)
             {
                 gb.SetActive(false);
+                RefinerOpen = false;
             }
         }
     }
@@ -291,6 +298,8 @@ public class BuildScript : MonoBehaviour
                 
                 assembler.transform.GetChild(1).gameObject.SetActive(true);
                 gb= assembler.transform.GetChild(1).gameObject;
+                BuildMenu.SetActive(false);
+                isBuilderOn = false;
             }
         }
         else if (gb != null)
@@ -357,12 +366,12 @@ public class BuildScript : MonoBehaviour
             }
             if (g.buildingID[i] == 2)
             {
+                buildDirection = g.rotation[i];
                 r = Instantiate(buldings[5], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<RotateBuilding>().direction = g.rotation[i];
                 r.GetComponent<RotateBuilding>().SetRotation();
                 r.GetComponent<AutoCrafter>().selectedRecipeIndex = g.crafterRecepiId[i];
-                
             }
             if (g.buildingID[i] == 3)
             {
@@ -382,6 +391,7 @@ public class BuildScript : MonoBehaviour
             {
                 r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<ConveyorBelt>().direction = g.rotation[i];
                 Debug.Log(g.spliterData[i].dir);
                 r.GetComponent<Splitter>().direction = g.spliterData[i].dir;
                 r.GetComponent<Splitter>().splitDirection = g.spliterData[i].splitDir;

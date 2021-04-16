@@ -96,8 +96,7 @@ public class AutoCrafter : MonoBehaviour
     private void Start(){
         ui = GetComponent<AutoCrafterUI>();
         buildScript = Camera.main.GetComponent<BuildScript>();
-
-        switch (buildScript.buildDirection)
+        switch (GetComponent<RotateBuilding>().direction)
         {
             case (Up):
                 input1 = new Vector3(transform.position.x - 0.5f, transform.position.y, transform.position.z);

@@ -942,7 +942,7 @@ MonoBehaviour:
   id: 6
   rot: 0
   listpos: 0
-  cost: 4
+  cost: 50
   indexActiveted: 0
 --- !u!1 &8935314969665611677
 GameObject:

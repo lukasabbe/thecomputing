@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public static class Gamemanager
 {
-    public static int money = 350, income = 0;
+    public static int money = 2500, income = 0;
     public static Text moneyText;
     public static List<GameObject> Buildings = new List<GameObject>();
     public static float AnimateSync;
