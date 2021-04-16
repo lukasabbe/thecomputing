@@ -19,8 +19,11 @@ public static class SaveGame
             int[] id = new int[Gamemanager.Buildings.Count];
             int[] rot = new int[Gamemanager.Buildings.Count];
             bool[] opt = new bool[Gamemanager.Buildings.Count];
+            bool[] opt2 = new bool[Gamemanager.Buildings.Count];
             //Class that saves refiners data
             refinerData[] Rdata = new refinerData[Gamemanager.Buildings.Count];
+            int[] Cdata = new int[Gamemanager.Buildings.Count];
+            sorter[] spliterData = new sorter[Gamemanager.Buildings.Count];
             //Debug.Log("Yes1 " + Gamemanager.Buildings.Count +" "+ pos.Length);
             //0 1 2: 0 + 3: 3 4 5
             int h = 0;
@@ -39,14 +42,26 @@ public static class SaveGame
                     opt[i] = true;
                     Rdata[i] = new refinerData(Gamemanager.Buildings[i].GetComponent<Refiner>().ch_id, Gamemanager.Buildings[i].GetComponent<Refiner>().ch_item);
                 }
+                else if(id[i] == 2)
+                {
+                    opt2[i] = true;
+                    Cdata[i] = Gamemanager.Buildings[i].GetComponent<AutoCrafter>().selectedRecipeIndex;
+                }
+                else if(id[i] == 5)
+                {
+                    spliterData[i] = new sorter(Gamemanager.Buildings[i].GetComponent<Splitter>().direction, Gamemanager.Buildings[i].GetComponent<Splitter>().splitDirection);
+                }
                 else
                 {
                     opt[i] = false;
+                    opt2[i] = false;
                     Rdata[i] = null;
+                    Cdata[i] = -100;
+                    spliterData[i] = null;
                 }
                 rot[i] = Gamemanager.Buildings[i].GetComponent<BuildingId>().rot;
             }
-            MapData data = new MapData(Gamemanager.money, pos, id, rot, opt, Rdata);
+            MapData data = new MapData(Gamemanager.money, pos, id, rot, opt, Rdata,opt2,Cdata,spliterData);
 
             formater.Serialize(strem, data);
             strem.Close();

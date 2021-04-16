@@ -10,18 +10,24 @@ public class MapData
     public float[] buildingPos;
     public int[] buildingID;
     public int[] rotation;
-    public bool[] opt;
+    public bool[] refinerOpt;
     public refinerData[] Rdata;
+    public bool[] crafterOpt;
+    public int[] crafterRecepiId;
+    public sorter[] spliterData;
 
 
-    public MapData(int money, float[] buildingPos, int[] buildingID, int[] rotation, bool[] opt, refinerData[] Rdata)
+    public MapData(int money, float[] buildingPos, int[] buildingID, int[] rotation, bool[] Ropt, refinerData[] Rdata, bool[] cOpt, int[] CrafterRepID, sorter[] SpliterData)
     {
         this.currentMoney = money;
         this.buildingPos = buildingPos;
         this.buildingID = buildingID;
         this.rotation = rotation;
-        this.opt = opt;
+        this.refinerOpt = Ropt;
         this.Rdata = Rdata;
+        this.crafterOpt = cOpt;
+        this.crafterRecepiId = CrafterRepID;
+        this.spliterData = SpliterData;
 
     }
 }
@@ -37,3 +43,16 @@ public class refinerData
         this.item = item;
     }
 }
+
+[System.Serializable]
+public class sorter
+{
+    public int dir;
+    public int splitDir;
+    public sorter(int dir, int splitDir)
+    {
+        this.dir = dir;
+        this.splitDir = splitDir;
+    }
+}
+
