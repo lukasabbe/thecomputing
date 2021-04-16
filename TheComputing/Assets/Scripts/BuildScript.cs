@@ -330,7 +330,13 @@ public class BuildScript : MonoBehaviour
     }
     bool emptyTile()
     {
-        if (Physics2D.OverlapCircle(buildPosition(), 0.02f, placedBuilding)) return false;
+        bool empty = true;
+        Collider2D[] blockingObjects = Physics2D.OverlapBoxAll(buildPosition(), new Vector2(0.05f, 0.05f), 0); // Checks to see if there are objects at the build position
+        foreach (Collider2D blockingObject in blockingObjects)
+        {
+            if (blockingObject.gameObject.GetComponent<BuildingId>()) empty = false;
+        }
+        if (!empty) return false;
         else return true;
     }
 
