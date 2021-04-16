@@ -111,6 +111,7 @@ public class BuildScript : MonoBehaviour
         {
             BuildMenu.SetActive(false);
             isBuilderOn = false;
+            ch_ShadowBuilding[num_building_shadow].SetActive(false);
         }
     }
     void Build()//test
@@ -260,7 +261,6 @@ public class BuildScript : MonoBehaviour
         GameObject g = findBuildingGameObject(0, "Refiner");
         if (g != null)
         {
-            gb = g.gameObject.transform.GetChild(4).gameObject;
             if (gb.activeSelf)
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(false);
@@ -268,6 +268,7 @@ public class BuildScript : MonoBehaviour
             else
             {
                 g.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+                gb = g.gameObject.transform.GetChild(4).gameObject;
             }
         }
         else if (gb != null)
@@ -281,7 +282,28 @@ public class BuildScript : MonoBehaviour
     void AssemblerOpen()
     {
         GameObject assembler = findBuildingGameObject(2);
-        if (assembler != null) assembler.transform.GetChild(1).gameObject.SetActive(!assembler.transform.GetChild(1).gameObject.activeSelf);
+
+        if (assembler != null) 
+        {
+            
+            if (!assembler.transform.GetChild(1).gameObject.activeSelf)
+            {
+                
+                assembler.transform.GetChild(1).gameObject.SetActive(true);
+                gb= assembler.transform.GetChild(1).gameObject;
+            }
+        }
+        else if (gb != null)
+        {
+            try
+            {
+                if (gb.GetComponent<BuildingId>().id == 2) gb.SetActive(false);
+            }
+            catch
+            {
+
+            }
+        }
     }
     void DropItem()
     {
