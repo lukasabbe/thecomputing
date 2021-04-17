@@ -4,11 +4,11 @@ Download the game [here](https://cdn.discordapp.com/attachments/2539690021356830
 
 Controls for the game:
 
-W,A,S,D - To move the camra
-Ctrl + scroll - zomm the camra
-tab - To open build menu
-R - rotate the building
-E - Open all buildings press E over them.
-E - To change the spliter direction pree E on them
-ctrl - h - To remov all items from the map
-esc - To leave the game and save
+- W,A,S,D - To move the camra
+- Ctrl + scroll - zomm the camra
+- tab - To open build menu
+- R - rotate the building
+- E - Open all buildings press E over them.
+- E - To change the spliter direction pree E on them
+- ctrl - h - To remov all items from the map
+- esc - To leave the game and save
