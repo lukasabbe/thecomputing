@@ -51,6 +51,10 @@ public static class SaveGame
                 {
                     spliterData[i] = new sorter(Gamemanager.Buildings[i].GetComponent<Splitter>().direction, Gamemanager.Buildings[i].GetComponent<Splitter>().splitDirection);
                 }
+                else if (id[i] == 7)
+                {
+                    spliterData[i] = new sorter(0, Gamemanager.Buildings[i].GetComponent<FilterScript>().dropSide);
+                }
                 else
                 {
                     opt[i] = false;

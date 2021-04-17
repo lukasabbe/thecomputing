@@ -15,7 +15,7 @@ public class Splitter : MonoBehaviour
     bool shouldSplit = false;
     const int Up = 0, Down = 2, Right = 1, Left = 3;
 
-    void Start(){ 
+    void Awake(){ 
         // Finds the Main Camera and it's BuildScript
         GameObject mainCamera = GameObject.Find("Main Camera");
         buildScript = mainCamera.GetComponent<BuildScript>();
@@ -27,7 +27,7 @@ public class Splitter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GameObject target = buildScript.findBuildingGameObject(2);
+            GameObject target = buildScript.findBuildingGameObject(5);
             if (target.GetComponent<BuildingId>().id == 5)
             {
                 splitDirection *= -1;

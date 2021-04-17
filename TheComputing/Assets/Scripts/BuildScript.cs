@@ -398,8 +398,7 @@ public class BuildScript : MonoBehaviour
                 r = Instantiate(buldings[4], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
-                Debug.Log(g.spliterData[i].dir);
-                r.GetComponent<Splitter>().direction = g.spliterData[i].dir;
+                r.GetComponent<Splitter>().direction = g.rotation[i];
                 r.GetComponent<Splitter>().splitDirection = g.spliterData[i].splitDir;
             }
             if (g.buildingID[i] == 6)
@@ -407,6 +406,25 @@ public class BuildScript : MonoBehaviour
                 r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<Tunnel>().sh(g.rotation[i]);
+            }
+            if (g.buildingID[i] == 7)
+            {
+                r = Instantiate(buldings[7], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<ConveyorBeltManager>().direction = g.rotation[i];
+                r.GetComponent<FilterScript>().dropSide = g.spliterData[i].splitDir;
+            }
+            if (g.buildingID[i] == 8)
+            {
+                r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
+                r.GetComponent<RotateBuilding>().direction = g.rotation[i];
+                r.GetComponent<RotateBuilding>().SetRotation();
+            }
+            if (g.buildingID[i] == 9)
+            {
+                r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             Gamemanager.Buildings.Add(r);
             r.GetComponent<BuildingId>().id = g.buildingID[i];
