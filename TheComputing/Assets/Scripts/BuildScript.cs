@@ -416,14 +416,14 @@ public class BuildScript : MonoBehaviour
             }
             if (g.buildingID[i] == 8)
             {
-                r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[8], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
                 r.GetComponent<RotateBuilding>().direction = g.rotation[i];
                 r.GetComponent<RotateBuilding>().SetRotation();
             }
             if (g.buildingID[i] == 9)
             {
-                r = Instantiate(buldings[6], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
+                r = Instantiate(buldings[9], new Vector3(g.buildingPos[y], g.buildingPos[y + 1], g.buildingPos[y + 2]), Quaternion.identity);
                 r.transform.rotation = Quaternion.Euler(0, 0, -90 * g.rotation[i]);
             }
             Gamemanager.Buildings.Add(r);
