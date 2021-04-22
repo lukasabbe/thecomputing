@@ -1,6 +1,6 @@
 #  The computing
 ## Welcome to the computing a game were u build computers like a god dam pro.
-Download the game [here](https://cdn.discordapp.com/attachments/253969002135683073/832907120159621130/1.0.1.zip "here")
+Download the game [here](https://github.com/lukasabbe/thecomputing/tree/main/Builds "here")
 
 Controls for the game:
 
